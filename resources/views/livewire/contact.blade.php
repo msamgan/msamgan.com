@@ -14,7 +14,7 @@ new class extends Component
 
 <div>
     <section class="space-y-4 rounded-md bg-gray-100 p-6 text-gray-900">
-        <h1 class="text-3xl font-bold">Get in touch</h1>
+        <h1 class="text-3xl font-bold">{{ Str::title('Get In Touch') }}</h1>
         <div class="space-y-4 pb-4 pt-4">
             <p class="flex items-center">
                 <svg

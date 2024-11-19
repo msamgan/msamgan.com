@@ -167,40 +167,16 @@
     ],
     "tools": [
         {
-            "name": "User Generator",
-            "description": "User Generator is a free online tool that lets you generate random user data with ease.",
-            "img": "/UserGenerator.png",
-            "link": "/tools/user-generator"
-        },
-        {
-            "name": "Content Generator",
-            "description": "Content Generator is a free online tool that lets you generate random content with ease.",
-            "img": "/ContentGenerator.png",
-            "link": "/tools/content-generator"
-        },
-        {
-            "name": "Character Counter",
-            "description": "Character Counter is a free online tool that lets you count the number of characters, words, and sentences in your text.",
-            "img": "/CharacterCounter.png",
-            "link": "/tools/character-counter"
-        },
-        {
-            "name": "Diff Checker",
-            "description": "Diff Checker is a free online tool that lets you compare text and find the differences between them.",
-            "img": "/DiffChecker.png",
-            "link": "/tools/diff-checker"
-        },
-        {
-            "name": "HTML to Markdown",
-            "description": "HTML to Markdown is a free online tool that lets you convert HTML to Markdown with ease.",
-            "img": "/HTMLtoMarkdown.png",
-            "link": "/tools/html-to-markdown"
-        },
-        {
             "name": "Url Shortener",
             "description": "Url Shortener is a free online tool that lets you shorten a long URL into a short one.",
             "img": "https://ms0.org/ms0_logo.png",
             "link": "https://ms0.org"
+        },
+        {
+            "name": "Fakem - Fake Data Generator",
+            "description": "Fakem is a free online tool that lets you generate fake data for testing purposes.",
+            "img": "https://fakem.info/static/media/logo-fakem.3cba4e1a.svg",
+            "link": "https://fakem.info/"
         }
     ]
 }
