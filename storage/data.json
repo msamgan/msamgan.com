@@ -1,0 +1,206 @@
+{
+    "name": "Mohammed Samgan Khan",
+    "username": "msamgan",
+    "title": "Software Engineer | Laravel Artisan | Open Source Enthusiast",
+    "intro": {
+        "img": "/msamgan.jpeg",
+        "text": [
+            "As a seasoned Software Engineer with over 9 years of experience, I have consistently delivered robust software solutions from conception to deployment. My expertise lies in designing, coding, and rigorously testing complex applications that align with business objectives. I excel in translating business requirements into effective technical solutions, ensuring seamless integration and functionality.",
+            " My proficiency spans various programming languages and frameworks, enabling me to adapt to diverse project needs. With a strong focus on quality and performance, I have a proven ability to solve challenging problems and drive projects to successful completion, contributing to the achievement of business goals."
+        ]
+    },
+    "contact": {
+        "email": "mail@msamgan.com",
+        "phone": "--",
+        "address": "Philadelphia (PA), USA"
+    },
+    "navigation": {
+        "pages": [
+            {
+                "name": "Home",
+                "link": "/",
+                "external": false
+            },
+            {
+                "name": "Posts",
+                "link": "posts",
+                "external": false
+            },
+            {
+                "name": "Services",
+                "link": "services",
+                "external": false
+            },
+            {
+                "name": "Projects",
+                "link": "projects",
+                "external": false
+            },
+            {
+                "name": "Contact",
+                "link": "contact",
+                "external": false
+            },
+            {
+                "name": "Tools",
+                "link": "tools",
+                "external": false
+            },
+            {
+                "name": "Resume",
+                "link": "https://msamgan.s3.us-east-2.amazonaws.com/mohammed+samgan+khan.pdf",
+                "external": true
+            }
+        ],
+        "social": [
+            {
+                "name": "YouTube",
+                "link": "https://www.youtube.com/@codebysamgan"
+            },
+            {
+                "name": "GitHub",
+                "link": "https://github.com/msamgan"
+            },
+            {
+                "name": "Twitter",
+                "link": "https://twitter.com/msamgank"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/mohd-samgan-khan/"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Laravel",
+                "link": "/tag/laravel"
+            },
+            {
+                "name": "PHP",
+                "link": "/tag/php"
+            },
+            {
+                "name": "How to",
+                "link": "/tag/how-to"
+            },
+            {
+                "name": "CLI",
+                "link": "/tag/cli"
+            },
+            {
+                "name": "MySQL",
+                "link": "/tag/mysql"
+            }
+        ]
+    },
+    "services": [
+        {
+            "name": "Web Development",
+            "description": "I build responsive, user-friendly web applications with expertise in front-end and back-end development for seamless integration.",
+            "img": "/WebDevelopment.png"
+        },
+        {
+            "name": "Mobile Development",
+            "description": "I develop robust mobile apps across platforms, delivering exceptional user experiences and aligning with business goals.",
+            "img": "/MobileDevelopment.png"
+        },
+        {
+            "name": "API Development",
+            "description": "I design secure, scalable APIs for seamless communication, optimizing performance and functionality with expert precision.",
+            "img": "/APIDevelopment.png"
+        },
+        {
+            "name": "Database Design",
+            "description": "I design scalable, efficient databases with expertise in modeling, normalization, and optimization for robustness and reliability.",
+            "img": "/DatabaseDesign.png"
+        },
+        {
+            "name": "Code Review",
+            "description": "I conduct thorough code reviews, ensuring clean, efficient, maintainable code, enhancing overall software quality.",
+            "img": "/CodeReview.png"
+        },
+        {
+            "name": "Technical Consulting",
+            "description": "I offer technical consulting, advising on strategy, architecture, and planning to help businesses overcome software challenges.",
+            "img": "/TechnicalConsulting.png"
+        },
+        {
+            "name": "Project Management",
+            "description": "I manage software projects, ensuring timely, on-budget delivery with expertise in planning, resource allocation, risk, and quality.",
+            "img": "/ProjectManagement.png"
+        },
+        {
+            "name": "Software Architecture",
+            "description": "I design scalable, maintainable software architectures, ensuring robust and flexible systems for long-term application success.",
+            "img": "/SoftwareArchitecture.png"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Framework X",
+            "description": "Framework X emerges as a beacon for developers seeking to streamline their API creation journey. Crafted for speed",
+            "img": "https://frameworkx.info/img/frameworkx.png",
+            "link": "https://frameworkx.info",
+            "repo": "https://github.com/3rd-planet/framework-x"
+        },
+        {
+            "name": "lara Pint",
+            "description": "vscode laravel pint formatter extension. A terrific Pint extension for Laravel which does everything you want.",
+            "img": "https://msamgan.gallerycdn.vsassets.io/extensions/msamgan/laravel-pint-vscode/0.1.3/1667797465197/Microsoft.VisualStudio.Services.Icons.Default",
+            "link": "https://marketplace.visualstudio.com/items?itemName=msamgan.laravel-pint-vscode#review-details",
+            "repo": "https://github.com/3rd-planet/vscode-larapint"
+        },
+        {
+            "name": "ms0 Url Shortener",
+            "description": "ms0 is a free URL shortening service that allows you to shorten a long URL into a short one.",
+            "img": "https://ms0.org/ms0_logo.png",
+            "link": "https://ms0.org",
+            "repo": "https://github.com/msamgan/ms0"
+        },
+        {
+            "name": "laravel environment keys checker",
+            "description": "Check if all the keys are available across all the .env files.",
+            "img": "/laravel.png",
+            "link": "https://github.com/msamgan/laravel-env-keys-checker",
+            "repo": "https://github.com/msamgan/laravel-env-keys-checker"
+        }
+    ],
+    "tools": [
+        {
+            "name": "User Generator",
+            "description": "User Generator is a free online tool that lets you generate random user data with ease.",
+            "img": "/UserGenerator.png",
+            "link": "/tools/user-generator"
+        },
+        {
+            "name": "Content Generator",
+            "description": "Content Generator is a free online tool that lets you generate random content with ease.",
+            "img": "/ContentGenerator.png",
+            "link": "/tools/content-generator"
+        },
+        {
+            "name": "Character Counter",
+            "description": "Character Counter is a free online tool that lets you count the number of characters, words, and sentences in your text.",
+            "img": "/CharacterCounter.png",
+            "link": "/tools/character-counter"
+        },
+        {
+            "name": "Diff Checker",
+            "description": "Diff Checker is a free online tool that lets you compare text and find the differences between them.",
+            "img": "/DiffChecker.png",
+            "link": "/tools/diff-checker"
+        },
+        {
+            "name": "HTML to Markdown",
+            "description": "HTML to Markdown is a free online tool that lets you convert HTML to Markdown with ease.",
+            "img": "/HTMLtoMarkdown.png",
+            "link": "/tools/html-to-markdown"
+        },
+        {
+            "name": "Url Shortener",
+            "description": "Url Shortener is a free online tool that lets you shorten a long URL into a short one.",
+            "img": "https://ms0.org/ms0_logo.png",
+            "link": "https://ms0.org"
+        }
+    ]
+}

@@ -17,6 +17,10 @@
         @else
             <title>{{ config('app.name') }}</title>
         @endif
+        <meta name="author" content="Mohammad Samgan Khan" />
+        <meta property="og:url" content="{{ url()->current() }}" />
+        <meta name="og:type" content="website" />
+        <meta name="og:site_name" content="msamgan.com" />
     </head>
     <body>
         <div class="mx-auto flex max-w-7xl justify-between bg-white p-12">
