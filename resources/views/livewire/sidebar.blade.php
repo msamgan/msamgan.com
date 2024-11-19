@@ -8,18 +8,24 @@ new class extends Component
 
     public function mount(): void
     {
-        $this->data = json_decode(file_get_contents(storage_path('app/private/data.json')), true);
+        $this->data = json_decode(
+            file_get_contents(storage_path('app/private/data.json')),
+            true,
+        );
     }
 }; ?>
 
 <div class="">
-    @foreach ($this->data['navigation']['pages'] as $page)
+    @foreach ($this->data["navigation"]["pages"] as $page)
         <a
-            href="{{ $page['link'] }}"
+            href="{{ $page["link"] }}"
             wire:navigate
-            class="block px-4 py-2 text-black text-opacity-80 hover:text-opacity-100"
+            class="@if (request()->is($page["link"]))
+                ml-6
+                text-red-700
+            @endif block px-4 py-2 text-black text-opacity-80 hover:text-opacity-100"
         >
-            {{ $page['name'] }}
+            {{ $page["name"] }}
         </a>
     @endforeach
 </div>

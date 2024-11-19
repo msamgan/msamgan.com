@@ -1,9 +1,9 @@
-<div class="rounded-3xl border-2 border-black bg-white p-8 text-red-600 dark:border-white dark:bg-gray-800">
+<div class="rounded-xl border-2 border-black bg-white p-8 text-red-600 dark:border-white dark:bg-gray-800">
     <div class="container mx-auto">
         <div class="flex flex-col items-center justify-between gap-3 lg:flex-row">
             <img class="w-42 h-36 dark:invert" src="https://frameworkx.info/img/frameworkx.png" alt="frameworkx" />
             <div>
-                <h2 class="tracki text-center text-lg font-light text-gray-700 dark:text-white">
+                <h2 class="tracki text-center text-xl font-light text-gray-700 dark:text-white">
                     Your Accelerated Path to
                     <span class="text-red-600 dark:font-bold">API Creation</span>
                 </h2>
