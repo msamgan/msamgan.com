@@ -17,7 +17,7 @@ new class extends Component
     <h1 class="pb-1 text-xl font-semibold text-gray-900 dark:text-white">Recent Posts</h1>
 
     <form>
-        <input type="hidden" name="page" value="{{ request('page', 1) }}"/>
+        <input type="hidden" name="page" value="{{ request('page', 1) }}" />
         <input
             type="text"
             class="mt-2 w-full rounded-md border border-gray-300 p-2 dark:border-gray-700"
@@ -32,7 +32,7 @@ new class extends Component
         @foreach ($posts['data'] as $post)
             <div class="flex flex-row justify-between py-2">
                 <h3
-                    class="flex-row text-lg font-light text-gray-700 hover:text-red-600 dark:text-white dark:hover:text-red-600 w-3/4"
+                    class="w-3/4 flex-row text-lg font-light text-gray-700 hover:text-red-600 dark:text-white dark:hover:text-red-600"
                     title="{{ $post['title'] }}"
                 >
                     <a href="{{ route('posts.show', $post['slug']) }}">
@@ -42,7 +42,7 @@ new class extends Component
                         @endif
                     </a>
                 </h3>
-                <small class="flex gap-3 text-sm text-gray-200  dark:text-white">
+                <small class="flex gap-3 text-sm text-gray-200 dark:text-white">
                     @foreach ($post['tags'] as $key => $tag)
                         <span class="text-gray-500 dark:text-white">#{{ $tag['name'] }}</span>
                     @endforeach
