@@ -21,7 +21,7 @@ new class extends Component
                 text-red-700
             @endif block px-4 py-2 text-black text-opacity-80 hover:text-opacity-100"
         >
-            <span class="flex flex-row justify-start gap-2">
+            <span class="flex flex-row justify-start gap-1">
                 @if (request()->is($page["link"]))
                     <x-selected-icon />
                 @endif

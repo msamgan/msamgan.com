@@ -1,7 +1,7 @@
 <x-layouts.app>
     <x-slot name="head">
-        @include('meta.services')
+        @include('meta.projects')
     </x-slot>
 
-    <livewire:services />
+    <livewire:projects />
 </x-layouts.app>

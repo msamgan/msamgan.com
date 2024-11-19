@@ -19,11 +19,11 @@ new class extends Component
                 <img
                     src="{{ $service['img'] }}"
                     alt="{{ $service['name'] }}"
-                    class="block w-full rounded-md object-cover object-center h-64"
+                    class="block h-64 w-full rounded-md object-cover object-center"
                 />
                 <div class="space-y-3 p-4">
                     <a rel="noopener noreferrer" href="#" class="block">
-                        <h3 class="text-semibold text-xl text-gray-900">{{ $service['name'] }}</h3>
+                        <h3 class="text-semibold text-xl text-gray-900">{{ Str::title($service['name']) }}</h3>
                     </a>
                     <p class="font-light leading-7 text-gray-700">{{ $service['description'] }}</p>
                 </div>
