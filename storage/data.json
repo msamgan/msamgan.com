@@ -97,42 +97,42 @@
         {
             "name": "Web Development",
             "description": "I build responsive, user-friendly web applications with expertise in front-end and back-end development for seamless integration.",
-            "img": "/WebDevelopment.png"
+            "img": "/services/WebDevelopment.png"
         },
         {
             "name": "Mobile Development",
             "description": "I develop robust mobile apps across platforms, delivering exceptional user experiences and aligning with business goals.",
-            "img": "/MobileDevelopment.png"
+            "img": "/services/MobileDevelopment.png"
         },
         {
             "name": "API Development",
             "description": "I design secure, scalable APIs for seamless communication, optimizing performance and functionality with expert precision.",
-            "img": "/APIDevelopment.png"
+            "img": "/services/APIDevelopment.png"
         },
         {
             "name": "Database Design",
             "description": "I design scalable, efficient databases with expertise in modeling, normalization, and optimization for robustness and reliability.",
-            "img": "/DatabaseDesign.png"
+            "img": "/services/DatabaseDesign.png"
         },
         {
             "name": "Code Review",
             "description": "I conduct thorough code reviews, ensuring clean, efficient, maintainable code, enhancing overall software quality.",
-            "img": "/CodeReview.png"
+            "img": "/services/CodeReview.png"
         },
         {
             "name": "Technical Consulting",
             "description": "I offer technical consulting, advising on strategy, architecture, and planning to help businesses overcome software challenges.",
-            "img": "/TechnicalConsulting.png"
+            "img": "/services/TechnicalConsulting.png"
         },
         {
             "name": "Project Management",
             "description": "I manage software projects, ensuring timely, on-budget delivery with expertise in planning, resource allocation, risk, and quality.",
-            "img": "/ProjectManagement.png"
+            "img": "/services/ProjectManagement.png"
         },
         {
             "name": "Software Architecture",
             "description": "I design scalable, maintainable software architectures, ensuring robust and flexible systems for long-term application success.",
-            "img": "/SoftwareArchitecture.png"
+            "img": "/services/SoftwareArchitecture.png"
         }
     ],
     "projects": [
