@@ -14,14 +14,14 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="mx-auto min-h-screen max-w-7xl justify-between bg-white p-2">
+        <div class="mx-auto flex min-h-screen max-w-7xl justify-between bg-white p-12">
             <div class="w-2/12">
                 <livewire:sidebar />
             </div>
-            <div>
+            <div class="w-8/12">
                 {{ $slot }}
             </div>
-            <div></div>
+            <div class="w-2/12"></div>
         </div>
     </body>
 </html>
