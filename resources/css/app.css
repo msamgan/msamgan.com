@@ -1,3 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.post {
+    h2 {
+        @apply text-3xl font-light;
+        @apply mt-5 mb-5;
+    }
+
+    h3 {
+        @apply text-2xl font-light;
+        @apply mt-5 mb-5;
+    }
+
+    h4 {
+        @apply text-xl font-semibold;
+        @apply mt-5 mb-5;
+    }
+
+    p {
+        @apply text-lg font-light;
+        @apply leading-7;
+        @apply mt-5 mb-5;
+    }
+
+    a {
+        @apply text-red-600;
+        @apply text-lg;
+    }
+
+    .inline-code {
+        @apply text-lg;
+    }
+
+    p > code {
+        @apply bg-red-500;
+        @apply text-white;
+        @apply px-1 py-0.5;
+    }
+
+    a:hover {
+        @apply text-red-400;
+        text-decoration: none !important;
+    }
+
+    li {
+        list-style: disc;
+        @apply text-lg;
+        @apply leading-7;
+        @apply mb-1 ml-6;
+    }
+
+    pre {
+        @apply text-lg;
+        @apply bg-gray-50;
+        @apply border-2 border-gray-200 border-l-4 border-l-red-500;
+        @apply text-black;
+        page-break-inside: avoid;
+        line-height: 1.6;
+        overflow: auto;
+        @apply pt-2 pb-2 pl-4 pr-4;
+        @apply rounded-lg;
+        @apply font-extralight;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        overflow: auto;
+        display: block;
+        @apply text-lg;
+    }
+
+    table tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1;
+        border-left: 3px solid #fb3020;
+    }
+
+    table th,
+    table td {
+        @apply pt-2 pb-2 pl-4 pr-4;
+        @apply border-2 border-gray-200;
+    }
+
+    table thead td {
+        @apply font-semibold;
+    }
+
+    table td {
+        @apply font-light;
+    }
+
+    table tr:nth-child(1) {
+        @apply font-semibold;
+        @apply text-lg;
+        color: #24292e;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #f6f8fa;
+    }
+
+    .sharethis-sticky-share-buttons .st-btn {
+        display: flex !important;
+    }
+
+    .embedded_image img {
+        border-radius: 8px;
+    }
+
+    blockquote {
+        border-left: 3px solid #fb3020;
+        background: linear-gradient(45deg, #f3d9d9, transparent);
+        color: #282828;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0.5em;
+        border-radius: 4px;
+        margin-bottom: 1.6em;
+        @apply text-lg;
+    }
+
+    .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 18px;
+        margin-top: 20px;
+    }
+}

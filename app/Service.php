@@ -12,4 +12,9 @@ class Service
     {
         return Http::get(self::BASE_URL . 'post/list/paginated', ['page' => $page, 'query' => $query])->json();
     }
+
+    public static function getPost(string $slug)
+    {
+        return Http::get(self::BASE_URL . 'post/' . $slug)->json();
+    }
 }

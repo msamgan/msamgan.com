@@ -18,3 +18,10 @@ if (! function_exists('getStaticData')) {
         );
     }
 }
+
+if (! function_exists('dateFormat')) {
+    function dateFormat($date): string
+    {
+        return date('F j, Y', strtotime($date));
+    }
+}
