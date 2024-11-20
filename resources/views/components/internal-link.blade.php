@@ -5,7 +5,7 @@
         text-red-700
     @else
         text-black
-    @endif block px-4 py-2 text-opacity-80 hover:text-opacity-100"
+    @endif block px-4 pb-3 text-opacity-80 hover:text-red-600 hover:text-opacity-100"
 >
     <span class="flex flex-row justify-start gap-1">
         @if ($active)

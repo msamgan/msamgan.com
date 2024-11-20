@@ -12,7 +12,7 @@ new class extends Component
     }
 }; ?>
 
-<div class="">
+<div class="sticky left-0 right-0 top-6">
     @foreach ($data['navigation']['pages'] as $page)
         @if ($page['external'])
             @include(

@@ -1,4 +1,4 @@
-<div class="flex flex-col space-y-12">
+<div class="sticky left-0 right-0 top-6 flex flex-col space-y-12">
     <a
         href="https://shop.ashallendesign.co.uk/?aff=WLoAY"
         target="_blank"
