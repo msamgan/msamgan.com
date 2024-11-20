@@ -5,23 +5,23 @@
 .post {
     h2 {
         @apply text-3xl font-light;
-        @apply mt-5 mb-5;
+        @apply mb-5 mt-5;
     }
 
     h3 {
         @apply text-2xl font-light;
-        @apply mt-5 mb-5;
+        @apply mb-5 mt-5;
     }
 
     h4 {
         @apply text-xl font-semibold;
-        @apply mt-5 mb-5;
+        @apply mb-5 mt-5;
     }
 
     p {
         @apply text-lg font-light;
         @apply leading-7;
-        @apply mt-5 mb-5;
+        @apply mb-5 mt-5;
     }
 
     a {
@@ -54,12 +54,12 @@
     pre {
         @apply text-lg;
         @apply bg-gray-50;
-        @apply border-2 border-gray-200 border-l-4 border-l-red-500;
+        @apply border-2 border-l-4 border-gray-200 border-l-red-500;
         @apply text-black;
         page-break-inside: avoid;
         line-height: 1.6;
         overflow: auto;
-        @apply pt-2 pb-2 pl-4 pr-4;
+        @apply pb-2 pl-4 pr-4 pt-2;
         @apply rounded-lg;
         @apply font-extralight;
     }
@@ -80,7 +80,7 @@
 
     table th,
     table td {
-        @apply pt-2 pb-2 pl-4 pr-4;
+        @apply pb-2 pl-4 pr-4 pt-2;
         @apply border-2 border-gray-200;
     }
 
