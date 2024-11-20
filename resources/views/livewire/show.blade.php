@@ -7,13 +7,35 @@ new class extends Component
 {
     public array $post;
 
+    public string $tagList = '';
+
     public function mount(): void
     {
         $this->post = Service::getPost(request()->route('post'));
+
+        $tagArray = [];
+        foreach ($this->post['tags'] as $tag) {
+            $tagArray[] = $tag['name'];
+        }
+
+        $this->tagList = implode(', ', $tagArray);
     }
 }; ?>
 
 <div>
+    <x-slot name="head">
+        <title>{{ titleGenerator(Str::title($post['title'])) }}</title>
+        <meta name="description" content="{{ $post['excerpt'] }}" />
+        <meta name="keywords" content="{{ $tagList }}" />
+
+        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
+        <meta property="og:description" content="{{ $post['excerpt'] }}" />
+        <meta
+            property="og:image"
+            content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
+        />
+    </x-slot>
+
     <article class="post space-y-8 text-gray-900">
         @if ($post['featured_image'])
             <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
@@ -65,5 +87,23 @@ new class extends Component
                 </li>
             @endforeach
         </ul>
+
+        <div>
+            <script
+                src="https://giscus.app/client.js"
+                data-repo="msamgan/blog-comments"
+                data-repo-id="R_kgDOIT1xSg"
+                data-category="General"
+                data-category-id="DIC_kwDOIT1xSs4CSMzg"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                async
+            ></script>
+        </div>
     </article>
 </div>
