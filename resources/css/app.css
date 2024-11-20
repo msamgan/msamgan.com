@@ -52,16 +52,8 @@
     }
 
     pre {
-        @apply text-lg;
-        @apply bg-gray-50;
         @apply border-2 border-l-4 border-gray-200 border-l-red-500;
-        @apply text-black;
-        page-break-inside: avoid;
-        line-height: 1.6;
-        overflow: auto;
-        @apply pb-2 pl-4 pr-4 pt-2;
         @apply rounded-lg;
-        @apply font-extralight;
     }
 
     table {

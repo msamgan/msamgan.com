@@ -28,7 +28,12 @@ new class extends Component
                 [
                     'link' => url($page['link']),
                     'label' => $page['name'],
-                    'active' => request()->is($page['link']),
+                    'active' =>
+                        request()->is($page['link']) ||
+                        (request()
+                            ->route()
+                            ->getName() === 'posts.show' &&
+                            $page['link'] === 'posts'),
                 ]
             )
         @endif
