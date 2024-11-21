@@ -25,9 +25,7 @@
             href="{{ url('posts?page=' . $i . '&query=' . request('query', '')) }}"
             type="button"
             title="Page 1"
-            class="{{
-                $i === $data['current_page'] ? 'inline-flex h-8 w-8 items-center justify-center rounded border border-red-600 bg-gray-50 text-sm text-red-600 shadow-md' : 'inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-gray-50 text-sm shadow-md'
-            }}"
+            class="{{ $i === $data['current_page'] ? 'inline-flex h-8 w-8 items-center justify-center rounded border border-red-600 bg-gray-50 text-sm text-red-600 shadow-md' : 'inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-gray-50 text-sm shadow-md' }}"
         >
             {{ $i }}
         </a>

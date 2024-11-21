@@ -35,7 +35,7 @@ new class extends Component
     </div>
 
     @if ($posts['total'] > 1)
-        <div class="mt-8 float-start">
+        <div class="float-start mt-8">
             <x-pagination :data="$posts" />
         </div>
     @endif

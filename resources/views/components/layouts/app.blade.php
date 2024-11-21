@@ -31,6 +31,21 @@
         <script>
             hljs.highlightAll();
         </script>
+
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="5feea10c-6999-43d0-983f-f963a4631506"
+            data-domains="msamgan.com"
+        ></script>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}" />
+        <link rel="manifest" href="{{ url('/site.webmanifest') }}" />
+        <link rel="mask-icon" href="{{ url('/safari-pinned-tab.svg') }}" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
     </head>
 
     <body>
