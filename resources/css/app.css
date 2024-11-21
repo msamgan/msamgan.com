@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css');
+@import './dracula.css';
 
 @tailwind base;
 @tailwind components;
@@ -51,11 +51,6 @@
         @apply text-lg;
         @apply leading-7;
         @apply mb-1 ml-6;
-    }
-
-    pre {
-        @apply border-2 border-l-4 border-gray-200 border-l-red-500;
-        @apply rounded-lg;
     }
 
     table {

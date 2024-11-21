@@ -72,7 +72,7 @@ new class extends Component
             <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
         @endif
 
-        <h1 class="text-4xl leading-10 text-gray-700 md:text-4xl md:leading-7 md:tracking-tight dark:text-white">
+        <h1 class="text-4xl leading-10 text-gray-700 md:text-4xl md:leading-10 md:tracking-tight dark:text-white">
             {{ Str::title($post['title']) }}
         </h1>
 
@@ -87,7 +87,7 @@ new class extends Component
                 />
                 <span class="ml-2 text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
-            <div>
+            {{--<div>
                 <button
                     id="copy"
                     wire:click="copyShortUrl"
@@ -102,7 +102,7 @@ new class extends Component
                 >
                     Copy Description
                 </button>
-            </div>
+            </div>--}}
         </div>
 
         <div class="font-light leading-7 text-gray-800 dark:text-white">
@@ -144,7 +144,7 @@ new class extends Component
     <script>
         hljs.highlightAll();
 
-        $wire.on('copy-short-url', (data) => {
+        /*$wire.on('copy-short-url', (data) => {
             navigator.clipboard.writeText(data.short_url).then(() => {
                 let copy = document.getElementById('copy');
                 copy.innerText = 'Copied!';
@@ -155,7 +155,6 @@ new class extends Component
                 }, 300);
             });
         });
-
         $wire.on('copy-meta-description', (data) => {
             navigator.clipboard.writeText(data.description).then(() => {
                 let copy = document.getElementById('copy-description');
@@ -166,6 +165,6 @@ new class extends Component
                     hljs.highlightAll();
                 }, 300);
             });
-        });
+        });*/
     </script>
 @endscript

@@ -46,14 +46,15 @@
                 <livewire:sidebar />
             </div>
 
-            <livewire:mobilemenu />
-
             <div class="w-full md:w-8/12">
                 {{ $slot }}
             </div>
+
             <div class="hidden w-2/12 md:block">
                 <x-affiliates />
             </div>
+
+            <livewire:mobilemenu />
         </div>
 
         <x-footer />
