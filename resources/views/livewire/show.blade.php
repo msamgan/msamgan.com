@@ -47,11 +47,11 @@ new class extends Component
 <div>
     <x-slot name="head">
         <title>{{ titleGenerator(Str::title($post['title'])) }}</title>
-        <meta name="description" content="{{ $post['excerpt'] }}"/>
-        <meta name="keywords" content="{{ $tagList }}"/>
+        <meta name="description" content="{{ $post['excerpt'] }}" />
+        <meta name="keywords" content="{{ $tagList }}" />
 
-        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}"/>
-        <meta property="og:description" content="{{ $post['excerpt'] }}"/>
+        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
+        <meta property="og:description" content="{{ $post['excerpt'] }}" />
         <meta
             property="og:image"
             content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
@@ -60,7 +60,7 @@ new class extends Component
 
     <article class="post space-y-8 text-gray-900">
         @if ($post['featured_image'])
-            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full"/>
+            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
         @endif
 
         <h1 class="text-4xl leading-7 text-gray-700 md:text-4xl md:tracking-tight dark:text-white">
@@ -105,7 +105,7 @@ new class extends Component
             </div>
         @endif
 
-        <x-fx-banner/>
+        <x-fx-banner />
 
         <h4 class="text-lg font-light">Related posts</h4>
         <ul class="ml-4 list-disc space-y-1 font-light">
@@ -121,18 +121,18 @@ new class extends Component
 </div>
 
 @script
-<script>
-    hljs.highlightAll();
-    $wire.on('copy-short-url', (data) => {
-        navigator.clipboard.writeText(data.short_url).then(() => {
-            let copy = document.getElementById('copy');
-            copy.innerText = 'Copied!';
+    <script>
+        hljs.highlightAll();
+        $wire.on('copy-short-url', (data) => {
+            navigator.clipboard.writeText(data.short_url).then(() => {
+                let copy = document.getElementById('copy');
+                copy.innerText = 'Copied!';
 
-            setTimeout(() => {
-                copy.innerText = 'Copy URL';
-                hljs.highlightAll();
-            }, 300);
+                setTimeout(() => {
+                    copy.innerText = 'Copy URL';
+                    hljs.highlightAll();
+                }, 300);
+            });
         });
-    });
-</script>
+    </script>
 @endscript
