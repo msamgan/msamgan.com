@@ -1,6 +1,9 @@
 <?php
 
 use App\Service;
+use App\Shortener;
+use Illuminate\Support\Facades\Cache;
+use JetBrains\PhpStorm\NoReturn;
 use Livewire\Volt\Component;
 
 new class extends Component
@@ -9,15 +12,17 @@ new class extends Component
 
     public string $tagList = '';
 
+    public string $currentUrl = '';
+
     public function mount(): void
     {
-        $posts = Service::getPost(request()->route('post'));
+        $post = Service::getPost(request()->route('post'));
 
-        if (isset($posts['status']) && $posts['status'] === false) {
+        if (isset($post['status']) && $post['status'] === false) {
             abort(404);
         }
 
-        $this->post = $posts;
+        $this->post = $post;
 
         $tagArray = [];
         foreach ($this->post['tags'] as $tag) {
@@ -25,17 +30,28 @@ new class extends Component
         }
 
         $this->tagList = implode(', ', $tagArray);
+        $this->currentUrl = url()->current();
+    }
+
+    #[NoReturn]
+    public function copyShortUrl(): void
+    {
+        $cacheKey = 'short-url-' . $this->currentUrl;
+        $cacheDuration = 3600 * 24; // 24 hours
+        $shortUrl = Cache::remember($cacheKey, $cacheDuration, fn () => Shortener::shorten(url: $this->currentUrl));
+
+        $this->dispatch('copy-short-url', url: $this->currentUrl, short_url: $shortUrl);
     }
 }; ?>
 
 <div>
     <x-slot name="head">
         <title>{{ titleGenerator(Str::title($post['title'])) }}</title>
-        <meta name="description" content="{{ $post['excerpt'] }}" />
-        <meta name="keywords" content="{{ $tagList }}" />
+        <meta name="description" content="{{ $post['excerpt'] }}"/>
+        <meta name="keywords" content="{{ $tagList }}"/>
 
-        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
-        <meta property="og:description" content="{{ $post['excerpt'] }}" />
+        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}"/>
+        <meta property="og:description" content="{{ $post['excerpt'] }}"/>
         <meta
             property="og:image"
             content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
@@ -44,14 +60,14 @@ new class extends Component
 
     <article class="post space-y-8 text-gray-900">
         @if ($post['featured_image'])
-            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
+            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full"/>
         @endif
 
         <h1 class="text-4xl leading-7 text-gray-700 md:text-4xl md:tracking-tight dark:text-white">
             {{ Str::title($post['title']) }}
         </h1>
 
-        <div class="flex w-full flex-col items-start justify-between text-gray-600 md:flex-row md:items-center">
+        <div class="flex w-full flex-col items-center justify-between text-gray-600 md:flex-row md:items-center">
             <div class="flex items-center md:space-x-2">
                 <img
                     src="https://secure.gravatar.com/avatar/c2acbea3e046c1b8cf7358d8526eda63?s=80"
@@ -60,6 +76,13 @@ new class extends Component
                 />
                 <span class="text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
+            <span
+                id="copy"
+                wire:click="copyShortUrl"
+                class="mr-4 cursor-pointer text-sm hover:text-red-600 dark:text-white"
+            >
+                Copy URL
+            </span>
         </div>
 
         <div class="font-light leading-7 text-gray-800 dark:text-white">
@@ -82,7 +105,7 @@ new class extends Component
             </div>
         @endif
 
-        <x-fx-banner />
+        <x-fx-banner/>
 
         <h4 class="text-lg font-light">Related posts</h4>
         <ul class="ml-4 list-disc space-y-1 font-light">
@@ -94,25 +117,22 @@ new class extends Component
                 </li>
             @endforeach
         </ul>
-
-        {{--
-            <div>
-            <script
-            src="https://giscus.app/client.js"
-            data-repo="msamgan/blog-comments"
-            data-repo-id="R_kgDOIT1xSg"
-            data-category="General"
-            data-category-id="DIC_kwDOIT1xSs4CSMzg"
-            data-mapping="pathname"
-            data-strict="1"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            async
-            ></script>
-            </div>
-        --}}
     </article>
 </div>
+
+@script
+<script>
+    hljs.highlightAll();
+    $wire.on('copy-short-url', (data) => {
+        navigator.clipboard.writeText(data.short_url).then(() => {
+            let copy = document.getElementById('copy');
+            copy.innerText = 'Copied!';
+
+            setTimeout(() => {
+                copy.innerText = 'Copy URL';
+                hljs.highlightAll();
+            }, 300);
+        });
+    });
+</script>
+@endscript

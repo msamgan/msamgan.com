@@ -22,16 +22,6 @@
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content="msamgan.com" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
-        />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-        <script>
-            hljs.highlightAll();
-        </script>
-
         <script
             defer
             src="https://cloud.umami.is/script.js"
@@ -46,6 +36,8 @@
         <link rel="mask-icon" href="{{ url('/safari-pinned-tab.svg') }}" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     </head>
 
     <body>
