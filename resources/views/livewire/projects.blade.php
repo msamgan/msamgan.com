@@ -13,7 +13,7 @@ new class extends Component
 }; ?>
 
 <div>
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-2">
+    <div class="grid grid-cols-1 space-y-6 gap-4 md:grid-cols-2 md:space-y-0">
         @foreach ($data['projects'] as $project)
             <div class="rounded-md bg-gray-50">
                 <img
