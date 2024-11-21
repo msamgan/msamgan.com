@@ -17,4 +17,9 @@ class Service
     {
         return Http::get(self::BASE_URL . 'post/' . $slug)->json();
     }
+
+    public static function getTagList()
+    {
+        return Http::get(self::BASE_URL . 'tag/list')->json();
+    }
 }

@@ -88,22 +88,24 @@ new class extends Component
             @endforeach
         </ul>
 
-        <div>
+        {{--
+            <div>
             <script
-                src="https://giscus.app/client.js"
-                data-repo="msamgan/blog-comments"
-                data-repo-id="R_kgDOIT1xSg"
-                data-category="General"
-                data-category-id="DIC_kwDOIT1xSs4CSMzg"
-                data-mapping="pathname"
-                data-strict="1"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="preferred_color_scheme"
-                data-lang="en"
-                async
+            src="https://giscus.app/client.js"
+            data-repo="msamgan/blog-comments"
+            data-repo-id="R_kgDOIT1xSg"
+            data-category="General"
+            data-category-id="DIC_kwDOIT1xSs4CSMzg"
+            data-mapping="pathname"
+            data-strict="1"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            async
             ></script>
-        </div>
+            </div>
+        --}}
     </article>
 </div>

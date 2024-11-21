@@ -19,6 +19,13 @@ if (! function_exists('getStaticData')) {
     }
 }
 
+if (! function_exists('getDefaultImageUrl')) {
+    function getDefaultImageUrl(): string
+    {
+        return 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png';
+    }
+}
+
 if (! function_exists('dateFormat')) {
     function dateFormat($date): string
     {
