@@ -38,7 +38,6 @@ new class extends Component
             )
         @endif
     @endforeach
-
     <hr class="mb-8 mt-4" />
     @foreach ($data['navigation']['social'] as $social)
         @include(

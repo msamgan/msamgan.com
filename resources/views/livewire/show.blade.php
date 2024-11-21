@@ -72,18 +72,18 @@ new class extends Component
             <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
         @endif
 
-        <h1 class="text-4xl leading-7 text-gray-700 md:text-4xl md:tracking-tight dark:text-white">
+        <h1 class="text-4xl leading-10 md:leading-7 text-gray-700 md:text-4xl md:tracking-tight dark:text-white">
             {{ Str::title($post['title']) }}
         </h1>
 
-        <div class="flex w-full flex-col items-center justify-between text-gray-600 md:flex-row md:items-center">
+        <div class="flex w-full space-y-4 flex-col items-center justify-between text-gray-600 md:flex-row md:items-center md:space-y-0">
             <div class="flex items-center md:space-x-2">
                 <img
                     src="https://secure.gravatar.com/avatar/c2acbea3e046c1b8cf7358d8526eda63?s=80"
                     alt=""
                     class="h-4 w-4 rounded-full border border-gray-300 bg-gray-500"
                 />
-                <span class="text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
+                <span class="text-sm dark:text-white ml-2">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
             <div>
                 <button

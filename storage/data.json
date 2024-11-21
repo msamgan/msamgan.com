@@ -47,6 +47,11 @@
                 "external": false
             },
             {
+                "name": "Tags",
+                "link": "tags",
+                "external": false
+            },
+            {
                 "name": "Resume",
                 "link": "https://msamgan.s3.us-east-2.amazonaws.com/mohammed+samgan+khan.pdf",
                 "external": true
