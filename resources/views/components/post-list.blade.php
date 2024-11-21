@@ -1,4 +1,4 @@
-<div class="flex flex-col space-y-2 justify-between py-2 md:flex-row md:space-y-0  w-[130%] md:w-full">
+<div class="flex w-[130%] flex-col justify-between space-y-2 py-2 md:w-full md:flex-row md:space-y-0">
     <h3
         class="w-3/4 flex-row text-lg font-light text-gray-700 hover:text-red-600 dark:text-white dark:hover:text-red-600"
         title="{{ $post['title'] }}"
