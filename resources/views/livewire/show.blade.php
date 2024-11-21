@@ -14,6 +14,8 @@ new class extends Component
 
     public string $currentUrl = '';
 
+    public string $metaDescription = '';
+
     public function mount(): void
     {
         $post = Service::getPost(request()->route('post'));
@@ -31,6 +33,7 @@ new class extends Component
 
         $this->tagList = implode(', ', $tagArray);
         $this->currentUrl = url()->current();
+        $this->metaDescription = $this->post['excerpt'];
     }
 
     #[NoReturn]
@@ -42,16 +45,22 @@ new class extends Component
 
         $this->dispatch('copy-short-url', url: $this->currentUrl, short_url: $shortUrl);
     }
+
+    #[NoReturn]
+    public function copyMetaDescription(): void
+    {
+        $this->dispatch('copy-meta-description', description: $this->metaDescription);
+    }
 }; ?>
 
 <div>
     <x-slot name="head">
         <title>{{ titleGenerator(Str::title($post['title'])) }}</title>
-        <meta name="description" content="{{ $post['excerpt'] }}" />
-        <meta name="keywords" content="{{ $tagList }}" />
+        <meta name="description" content="{{ $post['excerpt'] }}"/>
+        <meta name="keywords" content="{{ $tagList }}"/>
 
-        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
-        <meta property="og:description" content="{{ $post['excerpt'] }}" />
+        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}"/>
+        <meta property="og:description" content="{{ $post['excerpt'] }}"/>
         <meta
             property="og:image"
             content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
@@ -60,7 +69,7 @@ new class extends Component
 
     <article class="post space-y-8 text-gray-900">
         @if ($post['featured_image'])
-            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
+            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full"/>
         @endif
 
         <h1 class="text-4xl leading-7 text-gray-700 md:text-4xl md:tracking-tight dark:text-white">
@@ -76,13 +85,22 @@ new class extends Component
                 />
                 <span class="text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
-            <span
-                id="copy"
-                wire:click="copyShortUrl"
-                class="mr-4 cursor-pointer text-sm hover:text-red-600 dark:text-white"
-            >
-                Copy URL
-            </span>
+            <div>
+                <button
+                    id="copy"
+                    wire:click="copyShortUrl"
+                    class="mr-2 px-2 py-1 text-sm text-white bg-red-600 hover:bg-red-400 rounded-md"
+                >
+                    Copy URL
+                </button>
+                <button
+                    id="copy-description"
+                    wire:click="copyMetaDescription"
+                    class="mr-2 px-2 py-1 text-sm text-white bg-red-600 rounded-md hover:bg-red-400"
+                >
+                    Copy Description
+                </button>
+            </div>
         </div>
 
         <div class="font-light leading-7 text-gray-800 dark:text-white">
@@ -105,7 +123,7 @@ new class extends Component
             </div>
         @endif
 
-        <x-fx-banner />
+        <x-fx-banner/>
 
         <h4 class="text-lg font-light">Related posts</h4>
         <ul class="ml-4 list-disc space-y-1 font-light">
@@ -121,18 +139,31 @@ new class extends Component
 </div>
 
 @script
-    <script>
-        hljs.highlightAll();
-        $wire.on('copy-short-url', (data) => {
-            navigator.clipboard.writeText(data.short_url).then(() => {
-                let copy = document.getElementById('copy');
-                copy.innerText = 'Copied!';
+<script>
+    hljs.highlightAll();
 
-                setTimeout(() => {
-                    copy.innerText = 'Copy URL';
-                    hljs.highlightAll();
-                }, 300);
-            });
+    $wire.on('copy-short-url', (data) => {
+        navigator.clipboard.writeText(data.short_url).then(() => {
+            let copy = document.getElementById('copy');
+            copy.innerText = 'Copied!';
+
+            setTimeout(() => {
+                copy.innerText = 'Copy URL';
+                hljs.highlightAll();
+            }, 300);
         });
-    </script>
+    });
+
+    $wire.on('copy-meta-description', (data) => {
+        navigator.clipboard.writeText(data.description).then(() => {
+            let copy = document.getElementById('copy-description');
+            copy.innerText = 'Copied!';
+
+            setTimeout(() => {
+                copy.innerText = 'Copy Description';
+                hljs.highlightAll();
+            }, 300);
+        });
+    });
+</script>
 @endscript
