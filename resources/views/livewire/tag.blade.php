@@ -25,10 +25,16 @@ new class extends Component
 <div>
     <x-slot name="head">
         <title>{{ titleGenerator('Posts tagged with #' . $tag) }}</title>
-        <meta name="description" content="Explore msamgan's technical blog featuring insightful programming posts, in-depth code tutorials, and the latest updates in the tech world. based on a tag" />
+        <meta
+            name="description"
+            content="Explore msamgan's technical blog featuring insightful programming posts, in-depth code tutorials, and the latest updates in the tech world. based on a tag"
+        />
         <meta name="keywords" content="msamgan, blog, technical blog, programming, code, posts, {{ $tag }}" />
         <meta property="og:title" content="{{ titleGenerator('Posts tagged with #' . $tag) }}" />
-        <meta property="og:description" content="Explore msamgan's technical blog featuring insightful programming posts, in-depth code tutorials, and the latest updates in the tech world. based on a tag" />
+        <meta
+            property="og:description"
+            content="Explore msamgan's technical blog featuring insightful programming posts, in-depth code tutorials, and the latest updates in the tech world. based on a tag"
+        />
         <meta property="og:image" content="{{ getDefaultImageUrl() }}" />
     </x-slot>
 

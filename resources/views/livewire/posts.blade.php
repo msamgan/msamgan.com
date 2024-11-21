@@ -33,4 +33,10 @@ new class extends Component
             <x-post-list :post="$post" />
         @endforeach
     </div>
+
+    @if ($posts['total'] > 1)
+        <div class="mt-8 float-start">
+            <x-pagination :data="$posts" />
+        </div>
+    @endif
 </div>
