@@ -87,22 +87,24 @@ new class extends Component
                 />
                 <span class="ml-2 text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
-            {{--<div>
+            {{--
+                <div>
                 <button
-                    id="copy"
-                    wire:click="copyShortUrl"
-                    class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
+                id="copy"
+                wire:click="copyShortUrl"
+                class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
                 >
-                    Copy URL
+                Copy URL
                 </button>
                 <button
-                    id="copy-description"
-                    wire:click="copyMetaDescription"
-                    class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
+                id="copy-description"
+                wire:click="copyMetaDescription"
+                class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
                 >
-                    Copy Description
+                Copy Description
                 </button>
-            </div>--}}
+                </div>
+            --}}
         </div>
 
         <div class="font-light leading-7 text-gray-800 dark:text-white">

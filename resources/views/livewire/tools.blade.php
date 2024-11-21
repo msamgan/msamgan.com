@@ -13,7 +13,7 @@ new class extends Component
 }; ?>
 
 <div>
-    <div class="grid grid-cols-1 space-y-6 gap-4 md:grid-cols-1">
+    <div class="grid grid-cols-1 gap-4 space-y-6 md:grid-cols-1">
         @foreach ($data['tools'] as $tool)
             <a rel="noopener noreferrer" href="{{ $tool['link'] }}" target="_blank">
                 <div class="rounded-md bg-gray-50 p-2 text-gray-800">
