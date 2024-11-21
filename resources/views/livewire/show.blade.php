@@ -11,7 +11,13 @@ new class extends Component
 
     public function mount(): void
     {
-        $this->post = Service::getPost(request()->route('post'));
+        $posts = Service::getPost(request()->route('post'));
+
+        if (isset($posts['status']) && $posts['status'] === false) {
+            abort(404);
+        }
+
+        $this->post = $posts;
 
         $tagArray = [];
         foreach ($this->post['tags'] as $tag) {
@@ -66,7 +72,8 @@ new class extends Component
             <div class="mt-4 flex flex-wrap">
                 @foreach ($post['tags'] as $tag)
                     <a
-                        {{-- href="{{ route('tag', $tag) }}" --}}
+                        wire:navigate
+                        href="{{ route('tags.show', $tag['slug']) }}"
                         class="mr-3 cursor-pointer rounded-sm text-gray-500 hover:underline"
                     >
                         #{{ $tag['name'] }}

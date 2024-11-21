@@ -19,7 +19,7 @@ new class extends Component
             class="inline-block text-sm font-light text-gray-600 bg-white rounded-full"
             style="font-size: {{ $tag['posts_count'] * 1.2 + 18 }}px; padding: {{ $tag['posts_count'] * 0.5 + 10 }}px"
         >
-            <a {{--href={"/tag/" + tag.slug}--}} class={"hover:text-red-600"}>
+            <a wire:navigate href="{{ route('tags.show', $tag['slug']) }}" class={"hover:text-red-600"}>
                 {{ $tag['name'] }} ({{ $tag['posts_count'] }})
             </a>
         </span>

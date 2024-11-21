@@ -22,4 +22,11 @@ class Service
     {
         return Http::get(self::BASE_URL . 'tag/list')->json();
     }
+
+    public static function getTagPosts(string $slug, string $query = '')
+    {
+        return Http::get(self::BASE_URL . 'post/tag/' . $slug, [
+            'query' => $query,
+        ])->json();
+    }
 }
