@@ -9,6 +9,10 @@
                 ...
             @endif
         </a>
+
+        <small class="text-sm text-gray-500 dark:text-white">
+            {{ dateFormat($post['published_at']) }}
+        </small>
     </h3>
     <small class="flex gap-3 text-sm text-gray-200 dark:text-white">
         @foreach ($post['tags'] as $key => $tag)
