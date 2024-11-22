@@ -54,6 +54,15 @@
         @apply mb-1 ml-6;
     }
 
+    pre {
+        @apply bg-gray-800;
+        @apply text-white;
+        @apply p-4;
+        @apply rounded-lg;
+        @apply overflow-x-auto;
+        @apply mb-5;
+    }
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
