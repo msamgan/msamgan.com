@@ -1,4 +1,5 @@
 @import './dracula.css';
+@import './404.css';
 
 @tailwind base;
 @tailwind components;
