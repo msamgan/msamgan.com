@@ -87,24 +87,6 @@ new class extends Component
                 />
                 <span class="ml-2 text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
             </div>
-            {{--
-                <div>
-                <button
-                id="copy"
-                wire:click="copyShortUrl"
-                class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
-                >
-                Copy URL
-                </button>
-                <button
-                id="copy-description"
-                wire:click="copyMetaDescription"
-                class="mr-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white hover:bg-red-400"
-                >
-                Copy Description
-                </button>
-                </div>
-            --}}
         </div>
 
         <div class="font-light leading-7 text-gray-800 dark:text-white">
@@ -141,32 +123,3 @@ new class extends Component
         </ul>
     </article>
 </div>
-
-@script
-    <script>
-        hljs.highlightAll();
-
-        /*$wire.on('copy-short-url', (data) => {
-            navigator.clipboard.writeText(data.short_url).then(() => {
-                let copy = document.getElementById('copy');
-                copy.innerText = 'Copied!';
-
-                setTimeout(() => {
-                    copy.innerText = 'Copy URL';
-                    hljs.highlightAll();
-                }, 300);
-            });
-        });
-        $wire.on('copy-meta-description', (data) => {
-            navigator.clipboard.writeText(data.description).then(() => {
-                let copy = document.getElementById('copy-description');
-                copy.innerText = 'Copied!';
-
-                setTimeout(() => {
-                    copy.innerText = 'Copy Description';
-                    hljs.highlightAll();
-                }, 300);
-            });
-        });*/
-    </script>
-@endscript

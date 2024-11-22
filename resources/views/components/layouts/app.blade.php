@@ -38,8 +38,7 @@
         <meta name="theme-color" content="#ffffff" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-        <script type="module" src="https://esm.sh/giscus"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
     <body>
