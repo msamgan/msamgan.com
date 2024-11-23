@@ -8,9 +8,6 @@
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles / Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         {{-- add dynamic head elements --}}
         @if ($head)
             {{ $head }}
@@ -38,11 +35,9 @@
         <meta name="theme-color" content="#ffffff" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script>
-            hljs.highlightAll({
-                selector: 'pre code',
-            });
-        </script>
+
+        <!-- Styles / Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
     <body>
