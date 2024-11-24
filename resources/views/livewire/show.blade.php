@@ -82,7 +82,7 @@ new class extends Component
             <div class="flex items-center md:space-x-2">
                 <img
                     src="https://secure.gravatar.com/avatar/c2acbea3e046c1b8cf7358d8526eda63?s=80"
-                    alt=""
+                    alt="msamgan"
                     class="h-4 w-4 rounded-full border border-gray-300 bg-gray-500"
                 />
                 <span class="ml-2 text-sm dark:text-white">msamgan • {{ dateFormat($post['published_at']) }}</span>
