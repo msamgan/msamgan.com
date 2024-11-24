@@ -3,7 +3,7 @@
 if (! function_exists('titleGenerator')) {
     function titleGenerator($title = ''): string
     {
-        $baseTitle = config('app.name');
+        $baseTitle = config('app.name') . '.com';
 
         return $title === '' ? $baseTitle : $title . ' | ' . $baseTitle;
     }
