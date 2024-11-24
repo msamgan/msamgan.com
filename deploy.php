@@ -31,7 +31,7 @@ task('optimize', function () {
 });
 
 task('generate_sitemap', function () {
-    cd('{{release_path}}');
+    cd('{{current_path}}');
     run('php artisan app:generate-sitemap');
 });
 
