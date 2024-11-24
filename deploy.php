@@ -30,6 +30,11 @@ task('optimize', function () {
     run('php artisan optimize');
 });
 
+task('generate_sitemap', function () {
+    cd('{{release_path}}');
+    run('php artisan app:generate-sitemap');
+});
+
 task('clear_cache', function () {
     cd('{{current_path}}');
     run('php artisan cache:clear');
