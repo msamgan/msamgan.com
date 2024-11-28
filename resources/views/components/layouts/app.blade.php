@@ -19,7 +19,7 @@
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content="msamgan.com" />
 
-        <link rel=“canonical” href=“{{ url()->current() }}” />
+        <link rel="canonical" href="{{ url()->current() }}" />
 
         <script
             defer
