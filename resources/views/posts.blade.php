@@ -3,7 +3,6 @@
         @include('meta.posts')
     </x-slot>
 
-
     <x-slot name="canonical">
         @php
             $page = request()->get('page');

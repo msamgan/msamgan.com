@@ -42,8 +42,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body>
-        <div class="mx-auto flex max-w-7xl justify-between bg-white p-12">
+    <body class="dark:bg-gray-800">
+        <div class="mx-auto flex max-w-7xl justify-between bg-white p-12 dark:bg-gray-800">
             <div class="hidden w-1/12 md:block">
                 <livewire:sidebar />
             </div>

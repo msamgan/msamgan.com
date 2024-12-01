@@ -72,7 +72,7 @@ new class extends Component
             <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
         @endif
 
-        <h1 class="text-4xl leading-10 text-gray-700 md:text-4xl md:leading-10 md:tracking-tight dark:text-white">
+        <h1 class="text-4xl leading-10 text-gray-700 dark:text-white md:text-4xl md:leading-10 md:tracking-tight">
             {{ Str::title($post['title']) }}
         </h1>
 
