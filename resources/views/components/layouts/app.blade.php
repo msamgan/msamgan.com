@@ -4,12 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net" />
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
         {{-- add dynamic head elements --}}
-        @if ($head)
+        @if (isset($head))
             {{ $head }}
         @else
             <title>{{ config('app.name') }}</title>
@@ -19,7 +15,11 @@
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content="msamgan.com" />
 
-        <link rel="canonical" href="{{ url()->current() }}" />
+        @if (isset($canonical))
+            {{ $canonical }}
+        @else
+            <link rel="canonical" href="{{ url()->current() }}" />
+        @endif
 
         <script
             defer
