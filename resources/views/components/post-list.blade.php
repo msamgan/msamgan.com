@@ -3,7 +3,7 @@
         class="w-3/4 flex-row text-lg font-light text-gray-700 hover:text-red-600 dark:text-white dark:hover:text-red-600"
         title="{{ $post['title'] }}"
     >
-        <a href="{{ route('posts.show', $post['slug']) }}">
+        <a href="{{ route('posts.show', $post['slug']) }}" wire:navigate>
             {{ Str::title(substr($post['title'], 0, 120)) }}
             @if (strlen($post['title']) > 120)
                 ...

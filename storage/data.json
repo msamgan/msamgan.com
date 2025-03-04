@@ -176,12 +176,6 @@
             "description": "Url Shortener is a free online tool that lets you shorten a long URL into a short one.",
             "img": "https://ms0.org/ms0_logo.png",
             "link": "https://ms0.org"
-        },
-        {
-            "name": "Fakem - Fake Data Generator",
-            "description": "Fakem is a free online tool that lets you generate fake data for testing purposes.",
-            "img": "https://fakem.info/static/media/logo-fakem.3cba4e1a.svg",
-            "link": "https://fakem.info/"
         }
     ]
 }
