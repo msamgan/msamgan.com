@@ -14,9 +14,7 @@ new class extends Component
         $this->tag = request()->route('tag');
         $posts = Service::getTagPosts($this->tag);
 
-        if (isset($posts['status']) && $posts['status'] === false) {
-            abort(404);
-        }
+        abort_if(isset($posts['status']) && $posts['status'] === false, 404);
 
         $this->tagPosts = $posts;
     }

@@ -5,7 +5,8 @@
         "build": "vite build",
         "dev": "vite",
         "prepare": "husky install",
-        "lint": "npx prettier --write resources/ && ./vendor/bin/rector && ./vendor/bin/duster fix"
+        "lint": "npx prettier --write resources/ && ./vendor/bin/rector && ./vendor/bin/duster fix",
+        "ractor": "./vendor/bin/rector process"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",

@@ -20,9 +20,7 @@ new class extends Component
     {
         $post = Service::getPost(request()->route('post'));
 
-        if (isset($post['status']) && $post['status'] === false) {
-            abort(404);
-        }
+        abort_if(isset($post['status']) && $post['status'] === false, 404);
 
         $this->post = $post;
 
@@ -41,7 +39,7 @@ new class extends Component
     {
         $cacheKey = 'short-url-' . $this->currentUrl;
         $cacheDuration = 3600 * 24; // 24 hours
-        $shortUrl = Cache::remember($cacheKey, $cacheDuration, fn () => Shortener::shorten(url: $this->currentUrl));
+        $shortUrl = Cache::remember($cacheKey, $cacheDuration, fn (): string => Shortener::shorten(url: $this->currentUrl));
 
         $this->dispatch('copy-short-url', url: $this->currentUrl, short_url: $shortUrl);
     }
