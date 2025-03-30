@@ -5,6 +5,6 @@
 
     <div class="space-y-12">
         <livewire:introduction />
-        <x-fx-banner />
+        {{--<x-fx-banner />--}}
     </div>
 </x-layouts.app>

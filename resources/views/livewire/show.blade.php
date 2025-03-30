@@ -111,7 +111,7 @@ new class extends Component
             </div>
         @endif
 
-        <x-fx-banner />
+        {{--<x-fx-banner />--}}
 
         <h4 class="text-lg font-light">Related posts</h4>
         <ul class="ml-4 list-disc space-y-1 font-light">
