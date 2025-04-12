@@ -142,11 +142,18 @@
     ],
     "projects": [
         {
-            "name": "Framework X",
-            "description": "Framework X emerges as a beacon for developers seeking to streamline their API creation journey. Crafted for speed",
-            "img": "https://frameworkx.info/img/frameworkx.png",
-            "link": "https://frameworkx.info",
-            "repo": "https://github.com/3rd-planet/framework-x"
+            "name": "laravel Actions aka Lact",
+            "description": "connecting Js based fronted with laravel backend",
+            "img": "/lact-logo.png",
+            "link": "https://getlact.com/",
+            "repo": "https://github.com/msamgan/lact"
+        },
+        {
+            "name": "laravel environment keys checker",
+            "description": "Check if all the keys are available across all the .env files.",
+            "img": "/laravel.png",
+            "link": "https://github.com/msamgan/laravel-env-keys-checker",
+            "repo": "https://github.com/msamgan/laravel-env-keys-checker"
         },
         {
             "name": "lara Pint",
@@ -163,11 +170,11 @@
             "repo": "https://github.com/msamgan/ms0"
         },
         {
-            "name": "laravel environment keys checker",
-            "description": "Check if all the keys are available across all the .env files.",
-            "img": "/laravel.png",
-            "link": "https://github.com/msamgan/laravel-env-keys-checker",
-            "repo": "https://github.com/msamgan/laravel-env-keys-checker"
+            "name": "Framework X",
+            "description": "Framework X emerges as a beacon for developers seeking to streamline their API creation journey. Crafted for speed",
+            "img": "https://frameworkx.info/img/frameworkx.png",
+            "link": "https://frameworkx.info",
+            "repo": "https://github.com/3rd-planet/framework-x"
         }
     ],
     "tools": [
