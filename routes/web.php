@@ -11,4 +11,6 @@ Route::view('tools', 'tools')->name('tools');
 Route::view('tags', 'tags')->name('tags');
 Route::view('tag/{tag}', 'tag')->name('tags.show');
 
+Route::view('docs/{project}/{page?}', 'docs')->name('docs');
+
 Route::view('{post}', 'show')->name('posts.show');
