@@ -5,7 +5,6 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Config
-
 set('repository', 'https://github.com/msamgan/msamgan.com.git');
 
 add('shared_files', []);
@@ -13,7 +12,6 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 
 // Hosts
-
 host('146.190.32.125')
     ->set('remote_user', 'msamgan')
     ->set('deploy_path', '~/htdocs/msamgan.com');
@@ -44,5 +42,4 @@ after('deploy:update_code', 'build');
 after('deploy:symlink', 'optimize');
 
 // Hooks
-
 after('deploy:failed', 'deploy:unlock');
