@@ -5,7 +5,7 @@
         "build": "vite build",
         "dev": "vite",
         "prepare": "husky install",
-        "lint": "npx prettier --write resources/ && ./vendor/bin/rector && ./vendor/bin/duster fix",
+        "lint": "./vendor/bin/rector && npx prettier --write resources/ && ./vendor/bin/duster fix",
         "ractor": "./vendor/bin/rector process"
     },
     "devDependencies": {
