@@ -38,7 +38,7 @@ task('clear_cache', function () {
     run('php artisan cache:clear');
 });
 
-after('deploy:update_code', 'build');
+after('deploy:vendor', 'build');
 after('deploy:symlink', 'optimize');
 
 // Hooks
