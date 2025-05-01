@@ -1,5 +1,6 @@
 <?php
 
+use JetBrains\PhpStorm\NoReturn;
 use Livewire\Volt\Component;
 
 new class extends Component

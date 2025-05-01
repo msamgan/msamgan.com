@@ -12,10 +12,7 @@ if (! function_exists('titleGenerator')) {
 if (! function_exists('getStaticData')) {
     function getStaticData(): array
     {
-        return json_decode(
-            file_get_contents(storage_path('data.json')),
-            true,
-        );
+        return json_decode(file_get_contents(resource_path('data.json')), true);
     }
 }
 
@@ -30,5 +27,12 @@ if (! function_exists('dateFormat')) {
     function dateFormat($date): string
     {
         return date('F j, Y', strtotime($date));
+    }
+}
+
+if (! function_exists('activateLink')) {
+    function activateLink(string $routeName, string $whichMenuItem, array $page): bool
+    {
+        return request()->route()->getName() === $routeName && $page['link'] === $whichMenuItem;
     }
 }

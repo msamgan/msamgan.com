@@ -152,7 +152,7 @@
             "name": "laravel environment keys checker",
             "description": "Check if all the keys are available across all the .env files.",
             "img": "/laravel.png",
-            "link": "https://github.com/msamgan/laravel-env-keys-checker",
+            "link": "/docs/env-checker",
             "repo": "https://github.com/msamgan/laravel-env-keys-checker"
         },
         {

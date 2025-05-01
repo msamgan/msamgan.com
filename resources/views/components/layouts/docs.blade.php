@@ -43,14 +43,15 @@
     </head>
 
     <body class="dark:bg-gray-800">
-        <div class="mx-auto flex max-w-7xl justify-between bg-white dark:bg-gray-800">
+        <div class="mt-12">
+            <livewire:topmenu />
+        </div>
+        <div class="mx-auto flex max-w-7xl content-center justify-between bg-white dark:bg-gray-800">
             <div class="w-full">
                 {{ $slot }}
             </div>
-
-            <livewire:mobilemenu />
         </div>
-
+        <livewire:mobilemenu />
         <x-footer />
     </body>
 </html>

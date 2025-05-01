@@ -30,10 +30,8 @@ new class extends Component
                     'label' => $page['name'],
                     'active' =>
                         request()->is($page['link']) ||
-                        (request()
-                            ->route()
-                            ->getName() === 'posts.show' &&
-                            $page['link'] === 'posts'),
+                        activateLink('posts.show', 'posts', $page) ||
+                        activateLink('docs', 'projects', $page),
                 ]
             )
         @endif
