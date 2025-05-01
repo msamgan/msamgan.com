@@ -46,10 +46,8 @@
         <div class="mt-12">
             <livewire:topmenu />
         </div>
-        <div class="mx-auto flex max-w-7xl content-center justify-between bg-white dark:bg-gray-800">
-            <div class="w-full">
-                {{ $slot }}
-            </div>
+        <div class="mx-auto flex max-w-screen-2xl content-center justify-between bg-white dark:bg-gray-800">
+            {{ $slot }}
         </div>
         <livewire:mobilemenu />
         <x-footer />

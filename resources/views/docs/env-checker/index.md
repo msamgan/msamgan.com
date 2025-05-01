@@ -1,4 +1,4 @@
-# Check if all the keys are available across all the .env files.
+# Check keys are available across all the .envs
 
 ![image](https://github.com/user-attachments/assets/8f80ef4a-a777-46ed-bc49-e70e3c1bec60)
 
@@ -11,21 +11,6 @@ multiple .env files and want to ensure all the keys are available across all the
 
 With a team of developers, it is possible that some developers might forget to add the keys they used in their .env file
 to the .env.example file or the other way around.
-
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-    - [To check if all the keys are available across all the .env files.](#to-check-if-all-the-keys-are-available-across-all-the-env-files)
-        - [Options](#options)
-    - [To check if the .env and other provided files are present in .gitignore.](#to-check-if-the-env-and-other-provided-files-are-present-in-gitignore)
-    - [To sync all the available keys by line across all the .env files.](#to-sync-all-the-available-keys-by-line-across-all-the-env-files)
-- [In Test](#in-test)
-    - [To check if all the keys are available across all the .env files.](#to-check-if-all-the-keys-are-available-across-all-the-env-files-1)
-    - [To check if the .env and other provided files are present in .gitignore.](#to-check-if-the-env-and-other-provided-files-are-present-in-gitignore-1)
-- [Configuration](#configuration)
-- [Testing](#testing)
 
 ## Features
 

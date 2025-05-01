@@ -11,6 +11,7 @@
 
     if (file_exists($filePath)) {
         $mdContent = file_get_contents($filePath);
+        $sidebar = file_get_contents(resource_path('views/docs/' . $project . DIRECTORY_SEPARATOR . 'sidebar.md'));
         // Convert Markdown to HTML
 
         $config = [
@@ -36,13 +37,26 @@
 
         $converter = new MarkdownConverter($environment);
         $mdContent = $converter->convert($mdContent);
+        $sidebar = $converter->convert($sidebar);
     } else {
+        $sidebar = '<div></div>';
         $mdContent = '<p>Documentation not found.</p>';
     }
 @endphp
 
 <x-layouts.docs>
-    <article class="docs post mb-12 space-y-8 text-gray-900">
-        {!! $mdContent !!}
-    </article>
+    <div class="flex w-full flex-row gap-1">
+        <aside class="post w-4/12 ">
+            <div class="sticky left-0 right-0 top-6">
+                {!! $sidebar !!}
+                <div class="mt-12">
+                    <iframe src="https://github.com/sponsors/msamgan/card" title="Sponsor msamgan" height="225"
+                            width="460" style="border: 0;"></iframe>
+                </div>
+            </div>
+        </aside>
+        <article class="docs post w-8/12">
+            {!! $mdContent !!}
+        </article>
+    </div>
 </x-layouts.docs>

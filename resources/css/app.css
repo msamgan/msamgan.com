@@ -132,7 +132,7 @@
 .docs {
     h1 {
         @apply text-5xl font-semibold;
-        @apply mb-5 mt-12;
+        @apply mb-8;
     }
 
     p:nth-of-type(2) {
@@ -144,7 +144,7 @@
     p,
     li,
     code {
-        @apply text-xl;
+        @apply text-lg;
         @apply leading-7;
     }
 }

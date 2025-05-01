@@ -37,7 +37,7 @@ new class extends Component
         @endif
     @endforeach
 
-    <hr class="mb-8 mt-4" />
+    <hr class="mb-8 mt-4"/>
     @foreach ($data['navigation']['social'] as $social)
         @include(
             'components.external-link',
@@ -47,6 +47,11 @@ new class extends Component
             ]
         )
     @endforeach
+
+    <div class="mt-4">
+        <iframe src="https://github.com/sponsors/msamgan/button" title="Sponsor msamgan" height="32" width="114"
+                style="border: 0; border-radius: 6px;"></iframe>
+    </div>
 
     {{--
         <hr class="mb-8 mt-4" />

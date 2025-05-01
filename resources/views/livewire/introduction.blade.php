@@ -13,7 +13,7 @@ new class extends Component
 }; ?>
 
 <div>
-    <img src="{{ $data['intro']['img'] }}" class="h-32 w-32 rounded-full" alt="{{ $data['name'] }}" />
+    <img src="{{ $data['intro']['img'] }}" class="h-32 w-32 rounded-full" alt="{{ $data['name'] }}"/>
     <h1 class="col-span-2 mb-4 mt-4 text-3xl font-bold text-gray-900 dark:text-white">
         {{ $data['name'] }} ({{ $data['username'] }})
     </h1>
@@ -23,4 +23,9 @@ new class extends Component
             {{ $text }}
         </div>
     @endforeach
+
+    <div class="mt-4 float-end mr-12">
+        <iframe src="https://github.com/sponsors/msamgan/button" title="Sponsor msamgan" height="32" width="114"
+                style="border: 0; border-radius: 6px;"></iframe>
+    </div>
 </div>
