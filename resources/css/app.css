@@ -7,6 +7,9 @@
 
 body {
     @apply text-base;
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .post {
@@ -55,7 +58,7 @@ body {
         list-style: disc;
         @apply text-lg;
         @apply leading-7;
-        @apply mb-1 ml-6;
+        @apply mb-1 ml-6 font-light;
     }
 
     pre {
