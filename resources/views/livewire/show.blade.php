@@ -58,11 +58,11 @@ new class extends Component
 <div>
     <x-slot name="head">
         <title>{{ titleGenerator(Str::title($post['title'])) }}</title>
-        <meta name="description" content="{{ $post['excerpt'] }}"/>
-        <meta name="keywords" content="{{ $tagList }}"/>
+        <meta name="description" content="{{ $post['excerpt'] }}" />
+        <meta name="keywords" content="{{ $tagList }}" />
 
-        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}"/>
-        <meta property="og:description" content="{{ $post['excerpt'] }}"/>
+        <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
+        <meta property="og:description" content="{{ $post['excerpt'] }}" />
         <meta
             property="og:image"
             content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
@@ -71,7 +71,7 @@ new class extends Component
 
     <article class="post space-y-8 text-gray-900">
         @if ($post['featured_image'])
-            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full"/>
+            <img src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}" class="max-h-96 w-full" />
         @endif
 
         <h1 class="text-4xl leading-10 text-gray-700 dark:text-white md:text-4xl md:leading-10 md:tracking-tight">
@@ -125,8 +125,13 @@ new class extends Component
         </ul>
 
         <div class="mt-12">
-            <iframe src="https://github.com/sponsors/msamgan/card" title="Sponsor msamgan" height="225"
-                    width="750" style="border: 0;"></iframe>
+            <iframe
+                src="https://github.com/sponsors/msamgan/card"
+                title="Sponsor msamgan"
+                height="225"
+                width="750"
+                style="border: 0"
+            ></iframe>
         </div>
 
         <div id="disqus_thread"></div>

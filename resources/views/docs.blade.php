@@ -45,18 +45,44 @@
 @endphp
 
 <x-layouts.docs>
-    <div class="flex w-full flex-row gap-1">
-        <aside class="post w-4/12 ">
-            <div class="sticky left-0 right-0 top-6">
-                {!! $sidebar !!}
-                <div class="mt-12">
-                    <iframe src="https://github.com/sponsors/msamgan/card" title="Sponsor msamgan" height="225"
-                            width="460" style="border: 0;"></iframe>
-                </div>
-            </div>
-        </aside>
+    <x-slot name="head">
+        <title>{{ titleGenerator(Str::title('laravel env key checker')) }}</title>
+        <meta
+            name="description"
+            content="Ensure consistency across your Laravel .env files with the Laravel Env Keys Checker package. Automatically sync, validate, and manage keys across multiple .env files to prevent missing configurations and streamline your development workflow."
+        />
+        <meta
+            name="keywords"
+            content="Laravel .env checker, Laravel environment keys, .env validation, Laravel keys management, Laravel package, .env files sync, Laravel .gitignore, Laravel env keys checker, environment file management, PHP artisan tools"
+        />
+
+        <meta property="og:title" content="{{ titleGenerator(Str::title('laravel env key checker')) }}" />
+        <meta
+            property="og:description"
+            content="Ensure consistency across your Laravel .env files with the Laravel Env Keys Checker package. Automatically sync, validate, and manage keys across multiple .env files to prevent missing configurations and streamline your development workflow."
+        />
+        <meta
+            property="og:image"
+            content="{{ 'https://github.com/user-attachments/assets/8f80ef4a-a777-46ed-bc49-e70e3c1bec60' }}"
+        />
+    </x-slot>
+    <div class="flex w-full flex-row gap-16">
         <article class="docs post w-8/12">
             {!! $mdContent !!}
         </article>
+        <aside class="post w-4/12">
+            <div class="docs sticky left-0 right-0 top-6">
+                {!! $sidebar !!}
+                <div class="mt-12">
+                    <iframe
+                        src="https://github.com/sponsors/msamgan/card"
+                        title="Sponsor msamgan"
+                        height="225"
+                        width="460"
+                        style="border: 0"
+                    ></iframe>
+                </div>
+            </div>
+        </aside>
     </div>
 </x-layouts.docs>

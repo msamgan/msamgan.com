@@ -43,7 +43,7 @@
     </head>
 
     <body class="dark:bg-gray-800">
-        <div class="mt-12">
+        <div class="mt-8">
             <livewire:topmenu />
         </div>
         <div class="mx-auto flex max-w-screen-2xl content-center justify-between bg-white dark:bg-gray-800">

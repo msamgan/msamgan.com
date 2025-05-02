@@ -13,7 +13,7 @@ new class extends Component
 }; ?>
 
 <header class="p-4 dark:bg-gray-100 dark:text-gray-800">
-    <div class="container mx-auto flex h-16 justify-start md:justify-start md:space-x-8">
+    <div class="container mx-auto flex h-16 justify-between md:space-x-8">
         <img src="{{ $data['intro']['img'] }}" class="h-8 w-8 rounded-full" alt="{{ $data['name'] }}" />
         <ul class="hidden items-stretch space-x-3 md:flex">
             @foreach ($data['navigation']['pages'] as $page)

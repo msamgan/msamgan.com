@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply text-base;
+}
+
 .post {
     h2 {
         @apply text-3xl font-light;
@@ -146,5 +150,9 @@
     code {
         @apply text-lg;
         @apply leading-7;
+    }
+
+    a {
+        @apply text-base;
     }
 }
