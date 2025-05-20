@@ -63,10 +63,53 @@ new class extends Component
 
         <meta property="og:title" content="{{ titleGenerator(Str::title($post['title'])) }}"/>
         <meta property="og:description" content="{{ $post['excerpt'] }}"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ $currentUrl }}" />
         <meta
             property="og:image"
             content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}"
         />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="{{ $currentUrl }}" />
+        <meta name="twitter:title" content="{{ titleGenerator(Str::title($post['title'])) }}" />
+        <meta name="twitter:description" content="{{ $post['excerpt'] }}" />
+        <meta name="twitter:image" content="{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}" />
+
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "{{ Str::title($post['title']) }}",
+            "description": "{{ $post['excerpt'] }}",
+            "image": "{{ $post['featured_image'] ?? 'https://msamgan.dev/storage/images/MNn9limQxw66kpBfxjnXQ4jvdndLXom3bh7oeMvc.png' }}",
+            "datePublished": "{{ $post['published_at'] }}",
+            "dateModified": "{{ $post['updated_at'] ?? $post['published_at'] }}",
+            "url": "{{ $currentUrl }}",
+            "author": {
+                "@type": "Person",
+                "name": "Mohammad Samgan Khan",
+                "url": "{{ url('/') }}"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "msamgan.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ asset('/msamgan.jpeg') }}"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ $currentUrl }}"
+            },
+            "keywords": "{{ $tagList }}"
+        }
+        </script>
+
+        <link rel="canonical" href="{{ $currentUrl }}" />
     </x-slot>
 
     <article class="post space-y-8 animate-fadeIn">
