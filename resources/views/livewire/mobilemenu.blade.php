@@ -33,21 +33,38 @@ new class extends Component
     </div>
 
     <div
-        class="{{ $isOpen ? '' : 'hidden' }} relative z-10 md:hidden"
+        x-data="{ show: @entangle('isOpen') }"
+        x-show="show"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="relative z-10 md:hidden"
         aria-labelledby="slide-over-title"
         role="dialog"
         aria-modal="true"
+        style="display: none;"
     >
         <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
         <div class="fixed inset-0 overflow-hidden">
             <div class="absolute inset-0 overflow-hidden">
-                <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-52">
+                <div
+                    class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-52"
+                    x-transition:enter="transform transition ease-in-out duration-500"
+                    x-transition:enter-start="translate-x-full"
+                    x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transform transition ease-in-out duration-500"
+                    x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="translate-x-full"
+                >
                     <div class="pointer-events-auto relative w-screen max-w-md">
                         <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                             <button
                                 type="button"
                                 wire:click="toggleMenu"
-                                class="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                class="relative rounded-full p-2 text-gray-300 transition-colors duration-200 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500"
                             >
                                 <span class="absolute -inset-2.5"></span>
                                 <span class="sr-only">Close panel</span>
@@ -65,7 +82,7 @@ new class extends Component
                             </button>
                         </div>
 
-                        <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                        <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl dark:bg-gray-800">
                             <div class="relative mt-6 flex-1 px-4 sm:px-6">
                                 <livewire:sidebar />
                             </div>

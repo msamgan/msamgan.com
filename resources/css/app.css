@@ -6,10 +6,11 @@
 @tailwind utilities;
 
 body {
-    @apply text-base;
+    @apply text-base text-gray-800 antialiased;
     font-family: "Instrument Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    line-height: 1.6;
 }
 
 .post {

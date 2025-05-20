@@ -46,13 +46,13 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="dark:bg-gray-800">
-        <div class="mx-auto flex max-w-7xl justify-between bg-white p-12 dark:bg-gray-800">
+    <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <div class="mx-auto flex max-w-7xl justify-between bg-white p-6 md:p-12 shadow-sm rounded-lg my-4 mx-4 md:mx-auto dark:bg-gray-800 dark:shadow-gray-950">
             <div class="hidden w-1/12 md:block">
                 <livewire:sidebar />
             </div>
 
-            <div class="w-full md:w-8/12">
+            <div class="w-full md:w-8/12 px-2 md:px-6">
                 {{ $slot }}
             </div>
 
