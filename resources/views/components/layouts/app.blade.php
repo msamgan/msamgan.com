@@ -36,9 +36,12 @@
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
@@ -46,13 +49,15 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <div class="mx-auto flex max-w-7xl justify-between bg-white p-6 md:p-12 shadow-sm rounded-lg my-4 mx-4 md:mx-auto dark:bg-gray-800 dark:shadow-gray-950">
+    <body class="min-h-screen bg-gray-50 transition-colors duration-300 dark:bg-gray-900">
+        <div
+            class="mx-auto my-4 flex max-w-7xl justify-between rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800 dark:shadow-gray-950 md:mx-auto md:p-12"
+        >
             <div class="hidden w-1/12 md:block">
                 <livewire:sidebar />
             </div>
 
-            <div class="w-full md:w-8/12 px-2 md:px-6">
+            <div class="w-full px-2 md:w-8/12 md:px-6">
                 {{ $slot }}
             </div>
 

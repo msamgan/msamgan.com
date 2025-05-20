@@ -35,27 +35,27 @@ new class extends Component
     <div
         x-data="{ show: @entangle('isOpen') }"
         x-show="show"
-        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter="transition duration-300 ease-out"
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave="transition duration-200 ease-in"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
         class="relative z-10 md:hidden"
         aria-labelledby="slide-over-title"
         role="dialog"
         aria-modal="true"
-        style="display: none;"
+        style="display: none"
     >
         <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
         <div class="fixed inset-0 overflow-hidden">
             <div class="absolute inset-0 overflow-hidden">
                 <div
                     class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-52"
-                    x-transition:enter="transform transition ease-in-out duration-500"
+                    x-transition:enter="transform transition duration-500 ease-in-out"
                     x-transition:enter-start="translate-x-full"
                     x-transition:enter-end="translate-x-0"
-                    x-transition:leave="transform transition ease-in-out duration-500"
+                    x-transition:leave="transform transition duration-500 ease-in-out"
                     x-transition:leave-start="translate-x-0"
                     x-transition:leave-end="translate-x-full"
                 >
