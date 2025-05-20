@@ -66,23 +66,68 @@
             content="{{ 'https://github.com/user-attachments/assets/8f80ef4a-a777-46ed-bc49-e70e3c1bec60' }}"
         />
     </x-slot>
-    <div class="flex w-full flex-row gap-16">
-        <article class="docs post w-8/12">
-            {!! $mdContent !!}
+    <div class="flex w-full flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-0">
+        <article class="docs post w-full md:w-8/12 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 md:p-8">
+            <div class="prose prose-red max-w-none dark:prose-invert">
+                {!! $mdContent !!}
+            </div>
         </article>
-        <aside class="post w-4/12">
-            <div class="docs sticky left-0 right-0 top-6">
-                {!! $sidebar !!}
-                <div class="mt-12">
+        <aside class="post w-full md:w-4/12">
+            <div class="docs sticky left-0 right-0 top-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">Documentation</h2>
+                <div class="docs-sidebar">
+                    {!! $sidebar !!}
+                </div>
+                <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
                     <iframe
                         src="https://github.com/sponsors/msamgan/card"
                         title="Sponsor msamgan"
                         height="225"
-                        width="460"
+                        width="100%"
                         style="border: 0"
                     ></iframe>
                 </div>
             </div>
         </aside>
     </div>
+    <script>
+        // Add JavaScript to highlight the active section in the sidebar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all headings in the content
+            const headings = document.querySelectorAll('.docs h1, .docs h2, .docs h3');
+            // Get all links in the sidebar
+            const sidebarLinks = document.querySelectorAll('.docs-sidebar a');
+
+            // Function to highlight the active section
+            function highlightActiveSection() {
+                // Get current scroll position
+                const scrollPosition = window.scrollY;
+
+                // Find the current section
+                let currentSection = null;
+                headings.forEach(heading => {
+                    if (heading.offsetTop <= scrollPosition + 100) {
+                        currentSection = heading.id;
+                    }
+                });
+
+                // Remove active class from all links
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+
+                    // Add active class to the link that matches the current section
+                    const href = link.getAttribute('href');
+                    if (href && href.includes(currentSection)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', highlightActiveSection);
+
+            // Initial highlight
+            highlightActiveSection();
+        });
+    </script>
 </x-layouts.docs>
