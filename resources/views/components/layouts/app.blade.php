@@ -49,25 +49,66 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="min-h-screen bg-gray-50 transition-colors duration-300 dark:bg-gray-900">
-        <div
-            class="mx-auto my-4 flex max-w-7xl justify-between rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800 dark:shadow-gray-950 md:mx-auto md:p-12"
-        >
-            <div class="hidden w-1/12 md:block">
-                <livewire:sidebar />
-            </div>
+    <body class="min-h-screen transition-colors duration-300">
+        <!-- Back to top button -->
+        <button id="back-to-top" class="fixed bottom-8 right-8 z-50 hidden p-2 rounded-full bg-red-600 text-white shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
 
-            <div class="w-full px-2 md:w-8/12 md:px-6">
-                {{ $slot }}
-            </div>
+        <div class="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+            <div
+                class="mx-auto max-w-7xl rounded-2xl bg-white p-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-gray-800 dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transition-all duration-300 sm:p-6 md:p-8 lg:p-10"
+            >
+                <div class="flex flex-col md:flex-row md:justify-between md:gap-8">
+                    <div class="hidden md:block md:w-1.5/12 md:flex-shrink-0">
+                        <div class="sticky top-8">
+                            <livewire:sidebar />
+                        </div>
+                    </div>
 
-            <div class="hidden w-2/12 md:block">
-                <x-affiliates />
-            </div>
+                    <main class="w-full md:w-8/12 px-0 sm:px-2 md:px-4 order-2 md:order-1">
+                        <div class="animate-fadeIn">
+                            {{ $slot }}
+                        </div>
+                    </main>
 
-            <livewire:mobilemenu />
+                    <div class="hidden md:block md:w-2/12 md:flex-shrink-0 order-3">
+                        <div class="sticky top-8">
+                            <x-affiliates />
+                        </div>
+                    </div>
+
+                    <div class="md:hidden order-1 md:order-3 mb-4">
+                        <livewire:mobilemenu />
+                    </div>
+                </div>
+            </div>
         </div>
 
         <x-footer />
+
+        <script>
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                    backToTopButton.classList.add('flex');
+                } else {
+                    backToTopButton.classList.remove('flex');
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
     </body>
 </html>

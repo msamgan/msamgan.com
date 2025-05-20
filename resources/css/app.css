@@ -5,39 +5,166 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: #fb3020;
+    --primary-hover: #e02010;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --transition-speed: 0.3s;
+}
+
+.dark {
+    --primary-color: #f56565;
+    --primary-hover: #fc8181;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+}
+
 body {
-    @apply text-base text-gray-800 antialiased;
+    @apply text-base antialiased;
     font-family: 'Instrument Sans', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    transition: background-color var(--transition-speed) ease-in-out,
+                color var(--transition-speed) ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Modern UI Components */
+.btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+.btn-outline {
+    @apply border border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 dark:border-red-400 dark:text-red-400 dark:hover:bg-red-900/20;
+}
+
+.card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+}
+
+.card-header {
+    @apply p-4 border-b border-gray-100 dark:border-gray-700;
+}
+
+.card-body {
+    @apply p-4;
+}
+
+.card-footer {
+    @apply p-4 border-t border-gray-100 dark:border-gray-700;
+}
+
+.badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+    @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.badge-secondary {
+    @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
 }
 
 .post {
     h2 {
         @apply text-3xl font-light;
         @apply mb-5 mt-5;
+        color: var(--text-primary);
     }
 
     h3 {
         @apply text-2xl font-light;
         @apply mb-5 mt-5;
+        color: var(--text-primary);
     }
 
     h4 {
         @apply text-xl font-semibold;
         @apply mb-5 mt-5;
+        color: var(--text-primary);
     }
 
     p {
         @apply text-lg font-light;
         @apply leading-7;
         @apply mb-5 mt-5;
+        color: var(--text-secondary);
     }
 
     a {
-        @apply text-red-600;
-        @apply text-lg;
+        color: var(--primary-color);
+        @apply text-lg transition-colors duration-300;
     }
 
     .inline-code {
@@ -47,11 +174,11 @@ body {
     p > code {
         @apply bg-red-500;
         @apply text-white;
-        @apply px-1 py-0.5;
+        @apply px-1 py-0.5 rounded;
     }
 
     a:hover {
-        @apply text-red-400;
+        color: var(--primary-hover);
         text-decoration: none !important;
     }
 
