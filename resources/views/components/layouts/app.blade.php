@@ -8,12 +8,50 @@
         @if (isset($head))
             {{ $head }}
         @else
-            <title>{{ config('app.name') }}</title>
+            <title>{{ config('app.name') }} - Web Developer, Laravel Expert & Open Source Contributor</title>
+            <meta name="description" content="Personal website of Mohammad Samgan Khan, a web developer specializing in Laravel, PHP, JavaScript, and more. Sharing tutorials, tips, and insights on web development." />
         @endif
         <meta name="author" content="Mohammad Samgan Khan" />
+        <meta name="keywords" content="web development, laravel, php, javascript, nodejs, programming, tutorials, coding" />
+
+        <!-- Open Graph / Facebook -->
         <meta property="og:url" content="{{ url()->current() }}" />
-        <meta name="og:type" content="website" />
-        <meta name="og:site_name" content="msamgan.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="msamgan.com" />
+        <meta property="og:title" content="{{ isset($head) ? '' : config('app.name') . ' - Web Developer, Laravel Expert & Open Source Contributor' }}" />
+        <meta property="og:description" content="{{ isset($head) ? '' : 'Personal website of Mohammad Samgan Khan, a web developer specializing in Laravel, PHP, JavaScript, and more. Sharing tutorials, tips, and insights on web development.' }}" />
+        <meta property="og:image" content="{{ asset('/msamgan.jpeg') }}" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="{{ url()->current() }}" />
+        <meta name="twitter:title" content="{{ isset($head) ? '' : config('app.name') . ' - Web Developer, Laravel Expert & Open Source Contributor' }}" />
+        <meta name="twitter:description" content="{{ isset($head) ? '' : 'Personal website of Mohammad Samgan Khan, a web developer specializing in Laravel, PHP, JavaScript, and more. Sharing tutorials, tips, and insights on web development.' }}" />
+        <meta name="twitter:image" content="{{ asset('/msamgan.jpeg') }}" />
+
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Mohammad Samgan Khan",
+            "url": "{{ url('/') }}",
+            "image": "{{ asset('/msamgan.jpeg') }}",
+            "sameAs": [
+                "https://github.com/msamgan",
+                "https://www.linkedin.com/in/msamgan/"
+            ],
+            "jobTitle": "Web Developer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "msamgan.com"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ url()->current() }}"
+            }
+        }
+        </script>
 
         @if (isset($canonical))
             {{ $canonical }}

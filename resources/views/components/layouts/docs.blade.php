@@ -8,12 +8,54 @@
         @if (isset($head))
             {{ $head }}
         @else
-            <title>{{ config('app.name') }}</title>
+            <title>{{ config('app.name') }} - Documentation & Tutorials</title>
+            <meta name="description" content="Documentation, tutorials, and guides by Mohammad Samgan Khan. Learn about web development, Laravel, PHP, JavaScript, and more." />
         @endif
         <meta name="author" content="Mohammad Samgan Khan" />
+        <meta name="keywords" content="documentation, tutorials, web development, laravel, php, javascript, nodejs, programming, coding" />
+
+        <!-- Open Graph / Facebook -->
         <meta property="og:url" content="{{ url()->current() }}" />
-        <meta name="og:type" content="website" />
-        <meta name="og:site_name" content="msamgan.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="msamgan.com" />
+        <meta property="og:title" content="{{ isset($head) ? '' : config('app.name') . ' - Documentation & Tutorials' }}" />
+        <meta property="og:description" content="{{ isset($head) ? '' : 'Documentation, tutorials, and guides by Mohammad Samgan Khan. Learn about web development, Laravel, PHP, JavaScript, and more.' }}" />
+        <meta property="og:image" content="{{ asset('/msamgan.jpeg') }}" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="{{ url()->current() }}" />
+        <meta name="twitter:title" content="{{ isset($head) ? '' : config('app.name') . ' - Documentation & Tutorials' }}" />
+        <meta name="twitter:description" content="{{ isset($head) ? '' : 'Documentation, tutorials, and guides by Mohammad Samgan Khan. Learn about web development, Laravel, PHP, JavaScript, and more.' }}" />
+        <meta name="twitter:image" content="{{ asset('/msamgan.jpeg') }}" />
+
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "{{ isset($head) ? '' : config('app.name') . ' - Documentation & Tutorials' }}",
+            "description": "{{ isset($head) ? '' : 'Documentation, tutorials, and guides by Mohammad Samgan Khan. Learn about web development, Laravel, PHP, JavaScript, and more.' }}",
+            "image": "{{ asset('/msamgan.jpeg') }}",
+            "author": {
+                "@type": "Person",
+                "name": "Mohammad Samgan Khan",
+                "url": "{{ url('/') }}"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "msamgan.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ asset('/msamgan.jpeg') }}"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ url()->current() }}"
+            }
+        }
+        </script>
 
         @if (isset($canonical))
             {{ $canonical }}
