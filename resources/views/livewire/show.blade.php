@@ -81,11 +81,11 @@ new class extends Component
             </div>
         @endif
 
-        <h1 class="text-4xl font-bold leading-tight text-gray-800 dark:text-white md:text-5xl md:leading-tight md:tracking-tight mb-4">
+        <h1>
             {{ Str::title($post['title']) }}
         </h1>
 
-        <div class="flex w-full flex-col items-start justify-between space-y-4 mb-8 md:flex-row md:items-center md:space-y-0">
+        <div class="flex w-full flex-col items-start justify-between space-y-4 mb-6 md:flex-row md:items-center md:space-y-0">
             <div class="flex items-center space-x-3 group">
                 <div class="relative">
                     <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-full opacity-75 blur-sm group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -115,8 +115,8 @@ new class extends Component
             </div>--}}
         </div>
 
-        <div class="font-light leading-relaxed text-gray-800 dark:text-white bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-            <div class="post-content prose prose-lg max-w-none dark:prose-invert prose-headings:font-light prose-a:text-red-600 dark:prose-a:text-red-400">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6">
+            <div class="post-content prose prose-lg max-w-none dark:prose-invert prose-headings:font-medium prose-a:text-red-600 dark:prose-a:text-red-400">
                 {!! $post['content'] !!}
             </div>
         </div>
@@ -138,8 +138,8 @@ new class extends Component
         {{-- <x-fx-banner /> --}}
 
         <!-- Related Posts Section -->
-        <div class="mt-12 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 shadow-sm">
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+        <div class="mt-8 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 shadow-sm">
+            <h4 class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -160,14 +160,14 @@ new class extends Component
         </div>
 
         <!-- Sponsor Section -->
-        <div class="mt-12 bg-gradient-to-r from-red-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+        <div class="mt-8 bg-gradient-to-r from-red-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <h4 class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
                 Support My Work
             </h4>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">If you find my content helpful, consider supporting my work through GitHub Sponsors.</p>
+            <p class="text-gray-600 dark:text-gray-300">If you find my content helpful, consider supporting my work through GitHub Sponsors.</p>
             <div class="hover-lift transition-transform duration-300">
                 <iframe
                     src="https://github.com/sponsors/msamgan/card"
@@ -181,8 +181,8 @@ new class extends Component
         </div>
 
         <!-- Comments Section -->
-        <div class="mt-12 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-6 flex items-center">
+        <div class="mt-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <h4 class="flex items-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>

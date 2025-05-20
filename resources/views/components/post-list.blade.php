@@ -1,9 +1,9 @@
-<div class="card group mb-4 overflow-hidden border-l-4 border-transparent hover:border-l-red-500 transition-all duration-300 dark:bg-gray-800/50">
-    <div class="card-body p-4 md:p-5">
-        <div class="flex flex-col justify-between space-y-3 md:flex-row md:items-center md:space-y-0">
+<div class="card group mb-5 overflow-hidden border-l-4 border-transparent hover:border-l-red-500 transition-all duration-300 dark:bg-gray-800/50">
+    <div class="card-body">
+        <div class="flex flex-col justify-between space-y-4 md:flex-row md:items-center md:space-y-0">
             <div class="flex-1">
                 <h3
-                    class="mb-2 text-xl font-medium tracking-tight text-gray-800 transition-colors duration-300 hover:text-red-600 dark:text-white dark:hover:text-red-400"
+                    class="transition-colors duration-300 hover:text-red-600 dark:hover:text-red-400"
                     title="{{ $post['title'] }}"
                 >
                     <a href="{{ route('posts.show', $post['slug']) }}" wire:navigate class="hover:underline decoration-red-500 decoration-2 underline-offset-2">

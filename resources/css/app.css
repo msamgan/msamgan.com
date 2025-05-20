@@ -22,6 +22,14 @@
     --text-secondary: #e2e8f0;
     --bg-primary: #1a202c;
     --bg-secondary: #2d3748;
+
+    h1, h2, h3, h4, h5 {
+        @apply text-gray-100;
+    }
+
+    p {
+        @apply text-gray-300;
+    }
 }
 
 body {
@@ -34,6 +42,57 @@ body {
     background-color: var(--bg-secondary);
     transition: background-color var(--transition-speed) ease-in-out,
                 color var(--transition-speed) ease-in-out;
+}
+
+/* Typography System */
+h1 {
+    @apply text-4xl font-bold tracking-tight leading-tight mb-6;
+}
+
+h2 {
+    @apply text-3xl font-semibold tracking-tight leading-tight mb-5;
+}
+
+h3 {
+    @apply text-2xl font-medium tracking-tight leading-tight mb-4;
+}
+
+h4 {
+    @apply text-xl font-medium tracking-tight leading-tight mb-3;
+}
+
+h5 {
+    @apply text-lg font-medium tracking-tight leading-tight mb-2;
+}
+
+p {
+    @apply text-base leading-relaxed mb-4;
+}
+
+@screen md {
+    h1 {
+        @apply text-5xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h5 {
+        @apply text-xl;
+    }
+
+    p {
+        @apply text-lg;
+    }
 }
 
 /* Animations */
@@ -113,15 +172,15 @@ body {
 }
 
 .card-header {
-    @apply p-4 border-b border-gray-100 dark:border-gray-700;
+    @apply p-4 md:p-6 border-b border-gray-100 dark:border-gray-700;
 }
 
 .card-body {
-    @apply p-4;
+    @apply p-4 md:p-6;
 }
 
 .card-footer {
-    @apply p-4 border-t border-gray-100 dark:border-gray-700;
+    @apply p-4 md:p-6 border-t border-gray-100 dark:border-gray-700;
 }
 
 .badge {
@@ -138,43 +197,37 @@ body {
 
 .post {
     h2 {
-        @apply text-3xl font-light;
-        @apply mb-5 mt-5;
+        @apply mt-8;
         color: var(--text-primary);
     }
 
     h3 {
-        @apply text-2xl font-light;
-        @apply mb-5 mt-5;
+        @apply mt-6;
         color: var(--text-primary);
     }
 
     h4 {
-        @apply text-xl font-semibold;
-        @apply mb-5 mt-5;
+        @apply mt-5;
         color: var(--text-primary);
     }
 
     p {
-        @apply text-lg font-light;
-        @apply leading-7;
-        @apply mb-5 mt-5;
+        @apply font-normal;
         color: var(--text-secondary);
+        margin-top: 1.25rem;
     }
 
     a {
         color: var(--primary-color);
-        @apply text-lg transition-colors duration-300;
+        @apply transition-colors duration-300;
     }
 
     .inline-code {
-        @apply text-lg;
+        @apply text-base md:text-lg;
     }
 
     p > code {
-        @apply bg-red-500;
-        @apply text-white;
-        @apply px-1 py-0.5 rounded;
+        @apply bg-red-500 text-white px-1 py-0.5 rounded;
     }
 
     a:hover {
@@ -184,18 +237,11 @@ body {
 
     li {
         list-style: disc;
-        @apply text-lg;
-        @apply leading-7;
-        @apply mb-1 ml-6 font-light;
+        @apply leading-relaxed mb-2 ml-6 font-normal;
     }
 
     pre {
-        @apply bg-gray-800;
-        @apply text-white;
-        @apply p-4;
-        @apply rounded-lg;
-        @apply overflow-x-auto;
-        @apply mb-5;
+        @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-6;
     }
 
     table {
@@ -203,7 +249,7 @@ body {
         border-spacing: 0;
         overflow: auto;
         display: block;
-        @apply text-lg;
+        @apply text-base md:text-lg my-6 w-full;
     }
 
     table tr {
@@ -214,21 +260,20 @@ body {
 
     table th,
     table td {
-        @apply pb-2 pl-4 pr-4 pt-2;
-        @apply border-2 border-gray-200;
+        @apply py-2 px-4 border border-gray-200;
     }
 
-    table thead td {
-        @apply font-semibold;
+    table thead td,
+    table th {
+        @apply font-medium;
     }
 
     table td {
-        @apply font-light;
+        @apply font-normal;
     }
 
     table tr:nth-child(1) {
-        @apply font-semibold;
-        @apply text-lg;
+        @apply font-medium;
         color: #24292e;
     }
 
@@ -241,34 +286,25 @@ body {
     }
 
     .embedded_image img {
-        border-radius: 8px;
+        @apply rounded-lg my-6;
     }
 
     blockquote {
         border-left: 3px solid #fb3020;
         background: linear-gradient(45deg, #f3d9d9, transparent);
         color: #282828;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0.5em;
-        border-radius: 4px;
-        margin-bottom: 1.6em;
-        @apply text-lg;
+        @apply my-6 mx-0 p-4 rounded-lg text-base md:text-lg font-normal;
     }
 
     .post-content img {
         max-width: 100%;
         height: auto;
-        margin-bottom: 18px;
-        margin-top: 20px;
+        @apply my-6 rounded-lg;
     }
 }
 
 .docs {
-    h1 {
-        @apply text-5xl font-semibold;
-        @apply mb-8;
-    }
+    /* Let the base h1 styles apply */
 
     p:nth-of-type(2) {
         display: flex;
@@ -279,11 +315,15 @@ body {
     p,
     li,
     code {
-        @apply text-lg;
-        @apply leading-7;
+        @apply leading-relaxed;
     }
 
     a {
-        @apply text-base;
+        @apply text-base md:text-lg transition-colors duration-300;
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        color: var(--primary-hover);
     }
 }
