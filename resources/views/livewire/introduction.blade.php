@@ -25,7 +25,8 @@ new class extends Component
 
     <!-- Name and username -->
     <h1 class="mt-6">
-        {{ $data['name'] }} <span class="text-red-600 dark:text-red-400 font-normal">({{ $data['username'] }})</span>
+        {{ $data['name'] }}
+        <span class="text-red-600 dark:text-red-400 font-normal text-xl">({{ $data['username'] }})</span>
     </h1>
 
     <!-- Title -->
