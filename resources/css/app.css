@@ -307,9 +307,10 @@ p {
     /* Let the base h1 styles apply */
 
     h1 {
-        @apply text-3xl font-bold mb-6 text-gray-900 dark:text-white;
+        @apply text-3xl font-bold mb-8 text-gray-900 dark:text-white;
         position: relative;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1rem;
+        letter-spacing: -0.025em;
     }
 
     h1::after {
@@ -317,18 +318,42 @@ p {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 50px;
-        height: 3px;
-        background-color: var(--primary-color);
-        border-radius: 3px;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    h1:hover::after {
+        width: 100px;
     }
 
     h2 {
-        @apply text-2xl font-semibold mt-8 mb-4 text-gray-800 dark:text-gray-100;
+        @apply text-2xl font-semibold mt-10 mb-5 text-gray-800 dark:text-gray-100;
+        position: relative;
+        padding-left: 1rem;
+        border-left: 4px solid var(--primary-color);
+        letter-spacing: -0.01em;
     }
 
     h3 {
-        @apply text-xl font-medium mt-6 mb-3 text-gray-700 dark:text-gray-200;
+        @apply text-xl font-medium mt-8 mb-4 text-gray-700 dark:text-gray-200;
+        position: relative;
+        padding-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--primary-color);
+        opacity: 0.6;
+        border-radius: 2px;
     }
 
     p:nth-of-type(2) {
@@ -337,41 +362,125 @@ p {
         gap: 0.5rem; /* Gap equivalent to Tailwind's gap-2 (8px) */
     }
 
-    p,
-    li,
-    code {
-        @apply leading-relaxed text-gray-700 dark:text-gray-300;
+    p {
+        @apply leading-relaxed text-gray-700 dark:text-gray-300 mb-5;
+        font-size: 1.05rem;
+        line-height: 1.7;
     }
 
     pre {
-        @apply my-6 rounded-lg shadow-sm;
+        @apply my-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700;
+        position: relative;
+        overflow: hidden;
+    }
+
+    pre::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
     }
 
     code {
         @apply font-mono text-sm text-white;
     }
 
+    p > code {
+        @apply bg-red-500 text-white px-2 py-0.5 rounded text-sm;
+    }
+
     a {
-        @apply text-base md:text-lg transition-colors duration-300 font-medium;
+        @apply transition-all duration-300 font-medium;
         color: var(--primary-color);
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 1px;
+        border-bottom: 1px dashed rgba(251, 48, 32, 0.3);
     }
 
     a:hover {
         color: var(--primary-hover);
-        @apply underline;
+        @apply no-underline;
+        border-bottom: 1px solid rgba(251, 48, 32, 0.7);
     }
 
     ul, ol {
-        @apply my-4 pl-6;
+        @apply my-5;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        @apply mb-3 relative;
+        position: relative;
+    }
+
+    ul li::before {
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+
+    ol li {
+        @apply mb-3;
     }
 
     li {
-        @apply mb-2;
+        @apply leading-relaxed text-gray-700 dark:text-gray-300;
+        font-size: 1.05rem;
     }
 
     blockquote {
-        @apply italic border-l-4 pl-4 my-4 text-gray-600 dark:text-gray-400;
+        @apply italic border-l-4 pl-6 py-3 my-6 text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg;
         border-color: var(--primary-color);
+        position: relative;
+    }
+
+    blockquote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-size: 3rem;
+        color: rgba(251, 48, 32, 0.1);
+        font-family: serif;
+    }
+
+    /* Table styling */
+    table {
+        @apply w-full my-6 border-collapse rounded-lg overflow-hidden shadow-sm;
+        border: 1px solid #e2e8f0;
+    }
+
+    table thead {
+        @apply bg-gray-100 dark:bg-gray-700;
+    }
+
+    table th {
+        @apply py-3 px-4 text-left font-semibold text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-600;
+    }
+
+    table td {
+        @apply py-3 px-4 border-t border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300;
+    }
+
+    table tr:nth-child(even) {
+        @apply bg-gray-50 dark:bg-gray-800/50;
+    }
+
+    /* Image styling */
+    img {
+        @apply rounded-lg shadow-md my-6 max-w-full;
+        border: 1px solid #e2e8f0;
     }
 }
 
@@ -379,27 +488,85 @@ p {
     @apply text-sm;
 
     h2 {
-        @apply text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200;
+        @apply text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    h2:hover::after {
+        width: 60px;
     }
 
     ul, ol {
-        @apply pl-4;
+        @apply pl-0 space-y-1;
+        position: relative;
+        list-style-type: none
+    }
+
+    /* Add vertical line for nested lists */
+    ul ul, ol ol, ul ol, ol ul {
+        @apply pl-4 ml-2 border-l-2 border-gray-200 dark:border-gray-700;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        list-style-type: none
     }
 
     li {
-        @apply mb-2;
+        @apply mb-1 relative;
+        transition: transform 0.2s ease;
+        list-style-type: none
+    }
+
+    li:hover {
+        transform: translateX(2px);
     }
 
     a {
-        @apply text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200 block py-1 px-2 rounded;
+        @apply text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-all duration-200 py-1.5 px-3 rounded-md font-medium flex items-center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Add subtle icon before links */
+    a::before {
+        content: '›';
+        @apply mr-1.5 text-gray-400 dark:text-gray-500 transition-transform duration-200;
+        transform: translateX(-8px);
+        opacity: 0;
+    }
+
+    a:hover::before {
+        transform: translateX(0);
+        opacity: 1;
     }
 
     a:hover {
-        @apply bg-gray-100 dark:bg-gray-700;
+        @apply bg-gray-100 dark:bg-gray-700 shadow-sm;
+        transform: translateY(-1px);
     }
 
     /* Style for active link - JavaScript will add this class */
     a.active {
-        @apply bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-medium;
+        @apply bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-medium shadow-sm;
+        border-left: 2px solid var(--primary-color);
+    }
+
+    a.active::before {
+        content: '›';
+        @apply mr-1.5 text-red-500 dark:text-red-400;
+        transform: translateX(0);
+        opacity: 1;
     }
 }

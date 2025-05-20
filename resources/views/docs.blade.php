@@ -66,68 +66,44 @@
             content="{{ 'https://github.com/user-attachments/assets/8f80ef4a-a777-46ed-bc49-e70e3c1bec60' }}"
         />
     </x-slot>
-    <div class="flex w-full flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-0">
-        <article class="docs post w-full md:w-8/12 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 md:p-8">
-            <div class="prose prose-red max-w-none dark:prose-invert">
-                {!! $mdContent !!}
+    <div class="flex w-full flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-0 py-6">
+        <article class="docs post w-full md:w-8/12">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg">
+                <div class="prose prose-red max-w-none dark:prose-invert">
+                    {!! $mdContent !!}
+                </div>
+
+                <!-- Article footer with metadata -->
+                <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center mb-2 md:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <span>Last updated: {{ date('M d, Y') }}</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/msamgan/laravel-env-keys-checker" target="_blank" class="flex items-center hover:text-red-500 transition-colors duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </article>
         <aside class="post w-full md:w-4/12">
-            <div class="docs sticky left-0 right-0 top-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">Documentation</h2>
+            <div class="docs sticky left-0 right-0 top-6 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Documentation
+                </h2>
                 <div class="docs-sidebar">
                     {!! $sidebar !!}
-                </div>
-                <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <iframe
-                        src="https://github.com/sponsors/msamgan/card"
-                        title="Sponsor msamgan"
-                        height="225"
-                        width="100%"
-                        style="border: 0"
-                    ></iframe>
                 </div>
             </div>
         </aside>
     </div>
-    <script>
-        // Add JavaScript to highlight the active section in the sidebar
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all headings in the content
-            const headings = document.querySelectorAll('.docs h1, .docs h2, .docs h3');
-            // Get all links in the sidebar
-            const sidebarLinks = document.querySelectorAll('.docs-sidebar a');
-
-            // Function to highlight the active section
-            function highlightActiveSection() {
-                // Get current scroll position
-                const scrollPosition = window.scrollY;
-
-                // Find the current section
-                let currentSection = null;
-                headings.forEach(heading => {
-                    if (heading.offsetTop <= scrollPosition + 100) {
-                        currentSection = heading.id;
-                    }
-                });
-
-                // Remove active class from all links
-                sidebarLinks.forEach(link => {
-                    link.classList.remove('active');
-
-                    // Add active class to the link that matches the current section
-                    const href = link.getAttribute('href');
-                    if (href && href.includes(currentSection)) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            // Add scroll event listener
-            window.addEventListener('scroll', highlightActiveSection);
-
-            // Initial highlight
-            highlightActiveSection();
-        });
-    </script>
 </x-layouts.docs>
