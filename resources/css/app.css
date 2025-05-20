@@ -5,69 +5,243 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: #fb3020;
+    --primary-hover: #e02010;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --transition-speed: 0.3s;
+}
+
+.dark {
+    --primary-color: #f56565;
+    --primary-hover: #fc8181;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+
+    h1, h2, h3, h4, h5 {
+        @apply text-gray-100;
+    }
+
+    p {
+        @apply text-gray-300;
+    }
+}
+
 body {
-    @apply text-base;
-    font-family: "Instrument Sans", sans-serif;
+    @apply text-base antialiased;
+    font-family: 'Instrument Sans', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    transition: background-color var(--transition-speed) ease-in-out,
+                color var(--transition-speed) ease-in-out;
+}
+
+/* Typography System */
+h1 {
+    @apply text-4xl font-bold tracking-tight leading-tight mb-6;
+}
+
+h2 {
+    @apply text-3xl font-semibold tracking-tight leading-tight mb-5;
+}
+
+h3 {
+    @apply text-2xl font-medium tracking-tight leading-tight mb-4;
+}
+
+h4 {
+    @apply text-xl font-medium tracking-tight leading-tight mb-3;
+}
+
+h5 {
+    @apply text-lg font-medium tracking-tight leading-tight mb-2;
+}
+
+p {
+    @apply text-base leading-relaxed mb-4;
+}
+
+@screen md {
+    h1 {
+        @apply text-5xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h5 {
+        @apply text-xl;
+    }
+
+    p {
+        @apply text-lg;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Modern UI Components */
+.btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+.btn-outline {
+    @apply border border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 dark:border-red-400 dark:text-red-400 dark:hover:bg-red-900/20;
+}
+
+.card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+}
+
+.card-header {
+    @apply p-4 md:p-6 border-b border-gray-100 dark:border-gray-700;
+}
+
+.card-body {
+    @apply p-4 md:p-6;
+}
+
+.card-footer {
+    @apply p-4 md:p-6 border-t border-gray-100 dark:border-gray-700;
+}
+
+.badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+    @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.badge-secondary {
+    @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
 }
 
 .post {
     h2 {
-        @apply text-3xl font-light;
-        @apply mb-5 mt-5;
+        @apply mt-8;
+        color: var(--text-primary);
     }
 
     h3 {
-        @apply text-2xl font-light;
-        @apply mb-5 mt-5;
+        @apply mt-6;
+        color: var(--text-primary);
     }
 
     h4 {
-        @apply text-xl font-semibold;
-        @apply mb-5 mt-5;
+        @apply mt-5;
+        color: var(--text-primary);
     }
 
     p {
-        @apply text-lg font-light;
-        @apply leading-7;
-        @apply mb-5 mt-5;
+        @apply font-normal;
+        color: var(--text-secondary);
+        margin-top: 1.25rem;
     }
 
     a {
-        @apply text-red-600;
-        @apply text-lg;
+        color: var(--primary-color);
+        @apply transition-colors duration-300;
     }
 
     .inline-code {
-        @apply text-lg;
+        @apply text-base md:text-lg;
     }
 
     p > code {
-        @apply bg-red-500;
-        @apply text-white;
-        @apply px-1 py-0.5;
+        @apply bg-red-500 text-white px-1 py-0.5 rounded;
     }
 
     a:hover {
-        @apply text-red-400;
+        color: var(--primary-hover);
         text-decoration: none !important;
     }
 
     li {
         list-style: disc;
-        @apply text-lg;
-        @apply leading-7;
-        @apply mb-1 ml-6 font-light;
+        @apply leading-relaxed mb-2 ml-6 font-normal;
     }
 
     pre {
-        @apply bg-gray-800;
-        @apply text-white;
-        @apply p-4;
-        @apply rounded-lg;
-        @apply overflow-x-auto;
-        @apply mb-5;
+        @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-6;
     }
 
     table {
@@ -75,7 +249,7 @@ body {
         border-spacing: 0;
         overflow: auto;
         display: block;
-        @apply text-lg;
+        @apply text-base md:text-lg my-6 w-full;
     }
 
     table tr {
@@ -86,21 +260,20 @@ body {
 
     table th,
     table td {
-        @apply pb-2 pl-4 pr-4 pt-2;
-        @apply border-2 border-gray-200;
+        @apply py-2 px-4 border border-gray-200;
     }
 
-    table thead td {
-        @apply font-semibold;
+    table thead td,
+    table th {
+        @apply font-medium;
     }
 
     table td {
-        @apply font-light;
+        @apply font-normal;
     }
 
     table tr:nth-child(1) {
-        @apply font-semibold;
-        @apply text-lg;
+        @apply font-medium;
         color: #24292e;
     }
 
@@ -113,33 +286,74 @@ body {
     }
 
     .embedded_image img {
-        border-radius: 8px;
+        @apply rounded-lg my-6;
     }
 
     blockquote {
         border-left: 3px solid #fb3020;
         background: linear-gradient(45deg, #f3d9d9, transparent);
         color: #282828;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0.5em;
-        border-radius: 4px;
-        margin-bottom: 1.6em;
-        @apply text-lg;
+        @apply my-6 mx-0 p-4 rounded-lg text-base md:text-lg font-normal;
     }
 
     .post-content img {
         max-width: 100%;
         height: auto;
-        margin-bottom: 18px;
-        margin-top: 20px;
+        @apply my-6 rounded-lg;
     }
 }
 
 .docs {
+    /* Let the base h1 styles apply */
+
     h1 {
-        @apply text-5xl font-semibold;
-        @apply mb-8;
+        @apply text-3xl font-bold mb-8 text-gray-900 dark:text-white;
+        position: relative;
+        padding-bottom: 1rem;
+        letter-spacing: -0.025em;
+    }
+
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    h1:hover::after {
+        width: 100px;
+    }
+
+    h2 {
+        @apply text-2xl font-semibold mt-10 mb-5 text-gray-800 dark:text-gray-100;
+        position: relative;
+        padding-left: 1rem;
+        border-left: 4px solid var(--primary-color);
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        @apply text-xl font-medium mt-8 mb-4 text-gray-700 dark:text-gray-200;
+        position: relative;
+        padding-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--primary-color);
+        opacity: 0.6;
+        border-radius: 2px;
     }
 
     p:nth-of-type(2) {
@@ -148,14 +362,211 @@ body {
         gap: 0.5rem; /* Gap equivalent to Tailwind's gap-2 (8px) */
     }
 
-    p,
-    li,
+    p {
+        @apply leading-relaxed text-gray-700 dark:text-gray-300 mb-5;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    pre {
+        @apply my-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700;
+        position: relative;
+        overflow: hidden;
+    }
+
+    pre::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+    }
+
     code {
-        @apply text-lg;
-        @apply leading-7;
+        @apply font-mono text-sm text-white;
+    }
+
+    p > code {
+        @apply bg-red-500 text-white px-2 py-0.5 rounded text-sm;
     }
 
     a {
-        @apply text-base;
+        @apply transition-all duration-300 font-medium;
+        color: var(--primary-color);
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 1px;
+        border-bottom: 1px dashed rgba(251, 48, 32, 0.3);
+    }
+
+    a:hover {
+        color: var(--primary-hover);
+        @apply no-underline;
+        border-bottom: 1px solid rgba(251, 48, 32, 0.7);
+    }
+
+    ul, ol {
+        @apply my-5;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        @apply mb-3 relative;
+        position: relative;
+    }
+
+    ul li::before {
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+
+    ol li {
+        @apply mb-3;
+    }
+
+    li {
+        @apply leading-relaxed text-gray-700 dark:text-gray-300;
+        font-size: 1.05rem;
+    }
+
+    blockquote {
+        @apply italic border-l-4 pl-6 py-3 my-6 text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg;
+        border-color: var(--primary-color);
+        position: relative;
+    }
+
+    blockquote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-size: 3rem;
+        color: rgba(251, 48, 32, 0.1);
+        font-family: serif;
+    }
+
+    /* Table styling */
+    table {
+        @apply w-full my-6 border-collapse rounded-lg overflow-hidden shadow-sm;
+        border: 1px solid #e2e8f0;
+    }
+
+    table thead {
+        @apply bg-gray-100 dark:bg-gray-700;
+    }
+
+    table th {
+        @apply py-3 px-4 text-left font-semibold text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-600;
+    }
+
+    table td {
+        @apply py-3 px-4 border-t border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300;
+    }
+
+    table tr:nth-child(even) {
+        @apply bg-gray-50 dark:bg-gray-800/50;
+    }
+
+    /* Image styling */
+    img {
+        @apply rounded-lg shadow-md my-6 max-w-full;
+        border: 1px solid #e2e8f0;
+    }
+}
+
+.docs-sidebar {
+    @apply text-sm;
+
+    h2 {
+        @apply text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    h2:hover::after {
+        width: 60px;
+    }
+
+    ul, ol {
+        @apply pl-0 space-y-1;
+        position: relative;
+        list-style-type: none
+    }
+
+    /* Add vertical line for nested lists */
+    ul ul, ol ol, ul ol, ol ul {
+        @apply pl-4 ml-2 border-l-2 border-gray-200 dark:border-gray-700;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        list-style-type: none
+    }
+
+    li {
+        @apply mb-1 relative;
+        transition: transform 0.2s ease;
+        list-style-type: none
+    }
+
+    li:hover {
+        transform: translateX(2px);
+    }
+
+    a {
+        @apply text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-all duration-200 py-1.5 px-3 rounded-md font-medium flex items-center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Add subtle icon before links */
+    a::before {
+        content: '›';
+        @apply mr-1.5 text-gray-400 dark:text-gray-500 transition-transform duration-200;
+        transform: translateX(-8px);
+        opacity: 0;
+    }
+
+    a:hover::before {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    a:hover {
+        @apply bg-gray-100 dark:bg-gray-700 shadow-sm;
+        transform: translateY(-1px);
+    }
+
+    /* Style for active link - JavaScript will add this class */
+    a.active {
+        @apply bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-medium shadow-sm;
+        border-left: 2px solid var(--primary-color);
+    }
+
+    a.active::before {
+        content: '›';
+        @apply mr-1.5 text-red-500 dark:text-red-400;
+        transform: translateX(0);
+        opacity: 1;
     }
 }

@@ -28,7 +28,7 @@ new class extends Component
         <small class="text-gray-500 dark:text-white">Search for posts by title</small>
     </form>
 
-    <div class="mt-1">
+    <div class="mt-6 animate-fadeIn">
         @foreach ($posts['data'] as $post)
             <x-post-list :post="$post" />
         @endforeach
