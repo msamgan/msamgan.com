@@ -39,7 +39,7 @@
             "image": "{{ asset('/msamgan.jpeg') }}",
             "sameAs": [
                 "https://github.com/msamgan",
-                "https://www.linkedin.com/in/msamgan/"
+                "https://www.linkedin.com/in/mohd-samgan-khan/"
             ],
             "jobTitle": "Web Developer",
             "worksFor": {
