@@ -39,7 +39,10 @@ new class extends Component
     <h1 class="pb-4 text-xl font-semibold text-gray-900 dark:text-white">
         Posts tagged with #{{ $tag }} ({{ count($tagPosts) }})
     </h1>
-    @foreach ($tagPosts as $post)
-        <x-post-list :post="$post" />
-    @endforeach
+
+    <div class="animate-fadeIn">
+        @foreach ($tagPosts as $post)
+            <x-post-list :post="$post" />
+        @endforeach
+    </div>
 </div>
