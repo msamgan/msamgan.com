@@ -17,7 +17,7 @@ new class extends Component
 <div>
     <!-- Hamburger menu button -->
     <button
-        class="fixed right-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-md bg-white shadow-sm transition-colors duration-200 hover:bg-gray-50 md:hidden dark:bg-gray-800 dark:hover:bg-gray-700"
+        class="fixed right-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-md bg-white shadow-sm transition-colors duration-200 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 md:hidden"
         wire:click="toggleMenu"
         aria-label="Toggle menu"
     >
@@ -94,11 +94,15 @@ new class extends Component
                             <!-- Mobile header with logo -->
                             <div class="border-b border-gray-200 p-4 dark:border-gray-700">
                                 <div class="flex items-center">
-                                    <div class="h-8 w-8 rounded-md bg-gray-800 dark:bg-gray-700 flex items-center justify-center">
-                                        <span class="text-white font-medium text-xs">MS</span>
+                                    <div
+                                        class="flex h-8 w-8 items-center justify-center rounded-md bg-gray-800 dark:bg-gray-700"
+                                    >
+                                        <span class="text-xs font-medium text-white">MS</span>
                                     </div>
                                     <div class="ml-3">
-                                        <h1 class="text-sm font-medium text-gray-900 dark:text-white">Mohammad Samgan</h1>
+                                        <h1 class="text-sm font-medium text-gray-900 dark:text-white">
+                                            Mohammad Samgan
+                                        </h1>
                                         <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                                     </div>
                                 </div>

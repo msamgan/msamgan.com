@@ -32,27 +32,27 @@
 
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "headline": "Published Posts",
-    "description": "{{ $description }}",
-    "url": "{{ url()->current() }}",
-    "author": {
-        "@type": "Person",
-        "name": "Mohammad Samgan Khan",
-        "url": "{{ url('/') }}"
-    },
-    "publisher": {
-        "@type": "Person",
-        "name": "Mohammad Samgan Khan",
-        "image": "{{ asset('/msamgan.jpeg') }}"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ url()->current() }}"
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "headline": "Published Posts",
+        "description": "{{ $description }}",
+        "url": "{{ url()->current() }}",
+        "author": {
+            "@type": "Person",
+            "name": "Mohammad Samgan Khan",
+            "url": "{{ url('/') }}"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Mohammad Samgan Khan",
+            "image": "{{ asset('/msamgan.jpeg') }}"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ url()->current() }}"
+        }
     }
-}
 </script>
 
 <link rel="canonical" href="{{ url()->current() }}" />

@@ -1,5 +1,5 @@
 <div class="flex flex-col space-y-6">
-    <h3 class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Recommended</h3>
+    <h3 class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Recommended</h3>
 
     <a
         href="https://shop.ashallendesign.co.uk/?aff=WLoAY"

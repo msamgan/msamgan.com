@@ -73,28 +73,69 @@
             </div>
 
             <!-- Article footer with metadata -->
-            <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                <div class="flex items-center mb-2 md:mb-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            <div
+                class="mt-8 flex flex-wrap items-center justify-between border-t border-gray-200 pt-4 text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400"
+            >
+                <div class="mb-2 flex items-center md:mb-0">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-1 h-4 w-4 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
                     </svg>
                     <span>Last updated: {{ date('M d, Y') }}</span>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="https://github.com/msamgan/laravel-env-keys-checker" target="_blank" class="flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    <a
+                        href="https://github.com/msamgan/laravel-env-keys-checker"
+                        target="_blank"
+                        class="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mr-1 h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            />
                         </svg>
                         View on GitHub
                     </a>
                 </div>
             </div>
         </div>
-        <div class="hidden lg:block lg:w-1/4 lg:pl-8 border-l border-gray-100 dark:border-gray-700">
-            <div class="sticky top-6">
-                <h2 class="text-lg font-medium mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <div class="hidden border-l border-gray-100 dark:border-gray-700 lg:block lg:w-1/4 lg:pl-8">
+            <div class="sticky top-0 max-h-screen overflow-y-auto">
+                <h2
+                    class="mb-4 flex items-center border-b border-gray-200 pb-2 text-lg font-medium text-gray-900 dark:border-gray-700 dark:text-white"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
                     </svg>
                     Documentation
                 </h2>
