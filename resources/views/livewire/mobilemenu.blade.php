@@ -15,9 +15,9 @@ new class extends Component
 }; ?>
 
 <div>
-    <!-- Modern hamburger menu button -->
+    <!-- Hamburger menu button -->
     <button
-        class="group fixed right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 hover:bg-red-600 md:hidden dark:bg-gray-800 dark:hover:bg-red-600"
+        class="fixed right-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-md bg-white shadow-sm transition-colors duration-200 hover:bg-gray-50 md:hidden dark:bg-gray-800 dark:hover:bg-gray-700"
         wire:click="toggleMenu"
         aria-label="Toggle menu"
     >
@@ -27,7 +27,7 @@ new class extends Component
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-5 text-gray-700 transition-colors duration-300 group-hover:text-white dark:text-gray-300"
+            class="h-5 w-5 text-gray-700 dark:text-gray-300"
         >
             <path
                 stroke-linecap="round"
@@ -53,31 +53,31 @@ new class extends Component
         aria-modal="true"
         style="display: none"
     >
-        <!-- Backdrop with blur effect -->
-        <div class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-gray-900/50 transition-opacity" aria-hidden="true"></div>
 
         <div class="fixed inset-0 overflow-hidden">
             <div class="absolute inset-0 overflow-hidden">
                 <div
                     class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
-                    x-transition:enter="transform transition duration-500 ease-in-out"
+                    x-transition:enter="transform transition duration-300 ease-in-out"
                     x-transition:enter-start="translate-x-full"
                     x-transition:enter-end="translate-x-0"
-                    x-transition:leave="transform transition duration-500 ease-in-out"
+                    x-transition:leave="transform transition duration-300 ease-in-out"
                     x-transition:leave-start="translate-x-0"
                     x-transition:leave-end="translate-x-full"
                 >
                     <div class="pointer-events-auto relative w-screen max-w-md">
-                        <!-- Close button with improved styling -->
+                        <!-- Close button -->
                         <div class="absolute left-0 top-0 -ml-12 flex pr-2 pt-4">
                             <button
                                 type="button"
                                 wire:click="toggleMenu"
-                                class="group relative flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-800 dark:hover:bg-red-600"
+                                class="flex h-9 w-9 items-center justify-center rounded-md bg-white shadow-sm transition-colors duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                             >
                                 <span class="sr-only">Close panel</span>
                                 <svg
-                                    class="size-5 text-gray-700 transition-colors duration-300 group-hover:text-white dark:text-gray-300"
+                                    class="h-5 w-5 text-gray-700 dark:text-gray-300"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
@@ -89,23 +89,23 @@ new class extends Component
                             </button>
                         </div>
 
-                        <!-- Panel content with improved styling -->
-                        <div class="flex h-full flex-col overflow-y-auto bg-white p-6 shadow-2xl dark:bg-gray-800">
+                        <!-- Panel content -->
+                        <div class="flex h-full flex-col overflow-y-auto bg-white shadow-sm dark:bg-gray-800">
                             <!-- Mobile header with logo -->
-                            <div class="mb-6 flex items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
-                                <div class="flex items-center space-x-3">
-                                    <div class="relative h-10 w-10 overflow-hidden rounded-full bg-gradient-to-br from-red-500 to-red-600 p-0.5 shadow-lg">
-                                        <div class="absolute inset-0 rounded-full bg-white dark:bg-gray-800"></div>
-                                        <div class="relative flex h-full w-full items-center justify-center rounded-full bg-white text-lg font-bold text-red-600 dark:bg-gray-800 dark:text-red-400">
-                                            MS
-                                        </div>
+                            <div class="border-b border-gray-200 p-4 dark:border-gray-700">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-md bg-gray-800 dark:bg-gray-700 flex items-center justify-center">
+                                        <span class="text-white font-medium text-xs">MS</span>
                                     </div>
-                                    <span class="text-lg font-semibold text-gray-900 dark:text-white">msamgan.com</span>
+                                    <div class="ml-3">
+                                        <h1 class="text-sm font-medium text-gray-900 dark:text-white">Mohammad Samgan</h1>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Sidebar content -->
-                            <div class="relative flex-1 animate-fadeIn">
+                            <div class="flex-1 p-4">
                                 <livewire:sidebar />
                             </div>
                         </div>

@@ -77,7 +77,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
 
@@ -87,38 +87,38 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="min-h-screen transition-colors duration-300">
+    <body class="min-h-screen bg-gray-50 text-gray-800 antialiased dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
         <!-- Back to top button -->
-        <button id="back-to-top" class="fixed bottom-8 right-8 z-50 hidden p-2 rounded-full bg-red-600 text-white shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="back-to-top" class="fixed bottom-6 right-6 z-50 hidden p-2 rounded-full bg-gray-800 text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
         </button>
 
-        <div class="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+        <div class="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
             <div
-                class="mx-auto max-w-7xl rounded-2xl bg-white p-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-gray-800 dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transition-all duration-300 sm:p-6 md:p-8 lg:p-10"
+                class="mx-auto max-w-7xl bg-white dark:bg-gray-800 shadow-sm transition-all duration-200 sm:rounded-lg overflow-hidden"
             >
-                <div class="flex flex-col md:flex-row md:justify-between md:gap-8">
-                    <div class="hidden md:block md:w-1.5/12 md:flex-shrink-0">
-                        <div class="sticky top-8">
+                <div class="flex flex-col md:flex-row md:justify-between">
+                    <div class="hidden md:block md:w-64 md:border-r md:border-gray-100 dark:border-gray-700">
+                        <div class="sticky top-0 p-4 h-screen overflow-y-auto">
                             <livewire:sidebar />
                         </div>
                     </div>
 
-                    <main class="w-full md:w-8/12 px-0 sm:px-2 md:px-4 order-2 md:order-1">
-                        <div class="animate-fadeIn">
+                    <main class="flex-1 min-w-0 order-2 md:order-1">
+                        <div class="p-4 sm:p-6 lg:p-8">
                             {{ $slot }}
                         </div>
                     </main>
 
-                    <div class="hidden md:block md:w-2/12 md:flex-shrink-0 order-3">
-                        <div class="sticky top-8">
+                    <div class="hidden lg:block lg:w-64 lg:border-l lg:border-gray-100 dark:border-gray-700 order-3">
+                        <div class="sticky top-0 p-4 h-screen overflow-y-auto">
                             <x-affiliates />
                         </div>
                     </div>
 
-                    <div class="md:hidden order-1 md:order-3 mb-4">
+                    <div class="md:hidden order-1 md:order-3">
                         <livewire:mobilemenu />
                     </div>
                 </div>
