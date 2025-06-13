@@ -61,7 +61,7 @@ new class extends Component
         <h3 class="mb-2 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
             Connect
         </h3>
-        <div class="flex space-x-3 mt-2">
+        <div class="flex space-x-6 mt-4">
             @foreach ($data['navigation']['social'] as $social)
                 <a href="{{ $social['link'] }}" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors duration-200">
                     @if (strpos($social['link'], 'github') !== false)

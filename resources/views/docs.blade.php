@@ -68,7 +68,7 @@
     </x-slot>
     <div class="flex flex-col lg:flex-row">
         <div class="w-full lg:w-3/4 lg:pr-8">
-            <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-medium prose-a:text-gray-700 hover:prose-a:text-gray-900 dark:prose-a:text-gray-300 dark:hover:prose-a:text-white">
+            <div class="docs">
                 {!! $mdContent !!}
             </div>
 
