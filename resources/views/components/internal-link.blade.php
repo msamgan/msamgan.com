@@ -1,21 +1,13 @@
 <a
     href="{{ $link }}"
     wire:navigate
-    class="group relative mb-1 block overflow-hidden rounded-lg px-4 py-2.5 transition-all duration-300 @if ($active) bg-red-50 text-red-600 font-medium dark:bg-gray-800 dark:text-red-400 @else text-gray-700 hover:text-red-600 dark:text-gray-300 dark:hover:text-red-400 @endif"
+    class="@if ($active) bg-gray-100 text-gray-900 font-medium dark:bg-gray-800 dark:text-white @else text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 @endif block rounded-md px-3 py-2 text-sm transition-colors duration-200"
 >
-    <!-- Background hover effect -->
-    <span class="absolute inset-0 z-0 bg-gradient-to-r from-red-50 to-red-100 dark:from-gray-800 dark:to-gray-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-
-    <!-- Left border indicator -->
-    <span class="absolute left-0 top-0 h-full w-0.5 bg-red-600 dark:bg-red-500 @if ($active) opacity-100 @else opacity-0 group-hover:opacity-100 @endif transition-opacity duration-300"></span>
-
-    <span class="relative z-10 flex flex-row items-center gap-2">
+    <div class="flex items-center">
         @if ($active)
-            <x-selected-icon />
-        @else
-            <span class="h-4 w-0 transition-all duration-300 group-hover:w-4"></span>
+            <span class="mr-2 h-4 w-1 rounded-full bg-gray-900 dark:bg-gray-300"></span>
         @endif
 
-        <span class="transform transition-transform duration-300 group-hover:translate-x-1">{{ $page['name'] }}</span>
-    </span>
+        {{ $label }}
+    </div>
 </a>

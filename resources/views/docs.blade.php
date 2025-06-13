@@ -66,44 +66,83 @@
             content="{{ 'https://github.com/user-attachments/assets/8f80ef4a-a777-46ed-bc49-e70e3c1bec60' }}"
         />
     </x-slot>
-    <div class="flex w-full flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-0 py-6">
-        <article class="docs post w-full md:w-8/12">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg">
-                <div class="prose prose-red max-w-none dark:prose-invert">
-                    {!! $mdContent !!}
-                </div>
+    <div class="flex flex-col lg:flex-row">
+        <div class="w-full lg:w-3/4 lg:pr-8">
+            <div class="docs">
+                {!! $mdContent !!}
+            </div>
 
-                <!-- Article footer with metadata -->
-                <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                    <div class="flex items-center mb-2 md:mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            <!-- Article footer with metadata -->
+            <div
+                class="mt-8 flex flex-wrap items-center justify-between border-t border-gray-200 pt-4 text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400"
+            >
+                <div class="mb-2 flex items-center md:mb-0">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-1 h-4 w-4 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                    </svg>
+                    <span>Last updated: {{ date('M d, Y') }}</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a
+                        href="https://github.com/msamgan/laravel-env-keys-checker"
+                        target="_blank"
+                        class="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mr-1 h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            />
                         </svg>
-                        <span>Last updated: {{ date('M d, Y') }}</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/msamgan/laravel-env-keys-checker" target="_blank" class="flex items-center hover:text-red-500 transition-colors duration-200">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                            View on GitHub
-                        </a>
-                    </div>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
-        </article>
-        <aside class="post w-full md:w-4/12">
-            <div class="docs sticky left-0 right-0 top-6 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg">
-                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </div>
+        <div class="hidden border-l border-gray-100 dark:border-gray-700 lg:block lg:w-1/4 lg:pl-8">
+            <div class="sticky top-0 max-h-screen overflow-y-auto">
+                <h2
+                    class="mb-4 flex items-center border-b border-gray-200 pb-2 text-lg font-medium text-gray-900 dark:border-gray-700 dark:text-white"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
                     </svg>
                     Documentation
                 </h2>
-                <div class="docs-sidebar">
+                <div class="docs-sidebar text-sm">
                     {!! $sidebar !!}
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
 </x-layouts.docs>

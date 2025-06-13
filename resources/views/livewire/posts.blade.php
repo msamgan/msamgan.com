@@ -28,14 +28,14 @@ new class extends Component
         <small class="text-gray-500 dark:text-white">Search for posts by title</small>
     </form>
 
-    <div class="mt-6 animate-fadeIn">
+    <div class="animate-fadeIn mt-6">
         @foreach ($posts['data'] as $post)
             <x-post-list :post="$post" />
         @endforeach
     </div>
 
     @if ($posts['total'] > 1)
-        <div class="float-start mt-8">
+        <div class="mt-8 w-full">
             <x-pagination :data="$posts" />
         </div>
     @endif
