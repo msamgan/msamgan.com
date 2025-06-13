@@ -84,14 +84,29 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="dark:bg-gray-800">
-        <div class="mt-8">
-            <livewire:topmenu />
+    <body class="min-h-screen bg-gray-50 text-gray-800 antialiased dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+        <div class="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl bg-white dark:bg-gray-800 shadow-sm transition-all duration-200 sm:rounded-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row md:justify-between">
+                    <div class="hidden md:block md:w-64 md:border-r md:border-gray-100 dark:border-gray-700">
+                        <div class="sticky top-0 p-4 h-screen overflow-y-auto">
+                            <livewire:sidebar />
+                        </div>
+                    </div>
+
+                    <main class="flex-1 min-w-0 order-2 md:order-1">
+                        <div class="p-4 sm:p-6 lg:p-8">
+                            {{ $slot }}
+                        </div>
+                    </main>
+
+                    <div class="md:hidden order-1 md:order-3">
+                        <livewire:mobilemenu />
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mx-auto flex max-w-screen-2xl content-center justify-between bg-white dark:bg-gray-800">
-            {{ $slot }}
-        </div>
-        <livewire:mobilemenu />
+
         <x-footer />
     </body>
 </html>
